@@ -1,0 +1,228 @@
+
+/* checkout file css */
+
+.checkout-maincontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    
+}
+
+.checkout-container{
+    display: flex;
+    width: 50rem;
+    gap: 1;
+    margin: 0.5rem; 
+}
+
+.checkout-leftcontainer{
+    flex: 1;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-right: 2px solid black;
+}
+
+.checkout-rightcontainer{
+    flex: 1;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (max-width:800px) {
+    .checkout-container{
+        display: flex;
+        flex-direction: column;
+        width: 20rem;
+    }
+
+    .checkout-leftcontainer{
+     border-right: none;
+     border-bottom: 1px solid black;
+    }
+
+    
+}  
+
+
+/* checkout product file css */
+
+.checkoutProduct-address-oneaddress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    min-height: 5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.checkoutProduct-address-personal text{
+    padding: 0.5rem;
+    font-weight: 550;
+}
+
+.checkoutProduct-address-info{
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+}
+
+.checkoutProduct-address-info text{
+    padding: 0.1rem;
+}
+
+.checkoutProduct-amount-container{
+    border: 1px solid #ada9a9;
+    width: 95%;
+}
+
+.checkoutProduct-box-total-title{
+    margin: 3%;
+    font-weight: 800;
+}
+
+
+.checkoutProduct-box-total-detail{
+    display: flex;
+    justify-content: space-between;
+    margin: 1% 5%;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.checkoutProduct-box-total-detail-amount{
+    display: flex;
+    justify-content: space-between;
+    margin: 4% 5%;
+    font-size: 22px;
+    font-weight: 600;
+    border-bottom: dashed 2px #000;
+    border-top: dashed 2px #000;
+}
+
+
+
+
+
+/* checkout form css */
+
+.checkoutform-FormGroup {
+	margin: 0 15px 20px;
+	padding: 0;
+	border-style: none;
+	background-color: white;
+	will-change: opacity, transform;
+	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 black;
+	border-radius: 4px;
+}
+
+.checkoutform-FormRow {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-left: 15px;
+	border-top: 1px solid #108d25;
+}
+
+.StripeElement--webkit-autofill {
+	background: transparent !important;
+}
+
+.StripeElement {
+	width: 100%;
+	padding: 11px 15px 11px 0;
+}
+
+.checkoutform-container button {
+	display: block;
+	font-size: 16px;
+	width: calc(100% - 30px);
+	height: 40px;
+	margin: 40px 15px 0;
+	background-color: rgb(11, 143, 88);
+	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #ffb9f6;
+	border-radius: 4px;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 100ms ease-in-out;
+	will-change: transform, background-color, box-shadow;
+	border: none;
+}
+
+.checkoutform-container button:active {
+	background-color: rgb(77, 158, 168);
+	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #e298d8;
+	transform: scale(0.99);
+}
+
+.checkoutform-container h1,
+h3 {
+	text-align: center;
+}
+
+.checkoutform-payment-success{
+	color: green;
+	text-align: center;
+}
+.checkoutform-Thank-you{
+	color: black
+}
+.error{
+	color: red
+}
+
+.checkoutform-error{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(182, 55, 55);
+    color: white;
+    font-weight: 600;
+    font-family: cursive;
+    font-size: large;
+}
+
+.submit-btn:disabled {
+    background: #e7e8e9;
+    color: #9fa3a9;
+    cursor: not-allowed;
+  }
+
+
+
+
+
+
+
+
+
+
+  /* Checkout success page */
+
+  .checksucces-maincontainer{
+   width: 100%;
+   height: 50rem;
+  }
+
+  .checksucces-container{
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   }
+
+   .checksucces-container button{
+    margin-top: 1rem;
+    padding: 0.5rem 3rem;
+    background-color: green;
+    color: white;
+    font-weight: 800;
+    font-family: cursive;
+    font-size: 20px;
+    border: none;
+    border-radius: 2rem;
+   }

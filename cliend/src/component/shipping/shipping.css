@@ -1,0 +1,245 @@
+.shipping-container{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 2rem;
+}
+
+
+.shipping-left-container{
+    flex: 2;
+    border: 1px solid rgb(192, 191, 191);
+    min-height: 60vh;
+    margin-left: 10%;
+    max-width: 40vw;
+    padding-left: 3%;
+    padding-top: 2%;
+}
+
+
+.shipping-addaddress_box{
+    display: flex;
+    align-items: center;
+    padding: 0rem 1rem;
+    width: 95%;
+    min-height: 3rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #2874f0;
+    font-weight:70  0;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+
+.shippping-address-oneaddress{
+    width: 95%;
+    min-height: 6rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.shipping-address-checkbox{
+    
+    padding: 0rem 1rem;
+    height: 1.3rem;
+    width: 1.3rem;
+    margin: 0.5rem;
+}
+
+.shippping-address-personal text{
+    padding: 0.5rem;
+    font-weight: 550;
+}
+
+.shippping-address-info{
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+}
+
+.shippping-address-info text{
+    padding: 0.1rem;
+}
+
+.shippping-address-btn{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.2rem;
+    margin-right: 0.2rem;
+    gap: 1rem;
+}
+
+.shippping-address-btn button{
+    border: none;
+    background-color: rgb(64, 167, 64);
+    color: white;
+    padding: 0.3rem 1rem ;
+    font-weight: 700;
+    border-radius: 0.5rem;
+}
+
+
+.shipping-left-container-title{
+    font-size: 22px;
+    font-family: cursive;
+}
+
+.shipping-left-container-field{
+ display: flex;
+ flex-direction: column;
+ margin-bottom: 1rem;
+}
+
+.shipping-left-container-field text{
+    color: rgb(145, 142, 142);
+}
+
+.shipping-left-container-field-text{
+    width: 80%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #bebdbd;
+}
+
+.shipping-left-container-addresstype-title{
+    font-weight: 550;
+}
+
+.shipping-left-container-buttons{
+    display: flex;
+    align-items: row;
+}
+
+.shipping-left-container-radiobutton{
+    margin: 1rem 1.5rem;
+}
+
+.shipping-left-container-savebutton{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.shipping-left-container-savebutton button{
+    margin-bottom: 2rem;
+    font-weight: 800;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(80, 202, 80);
+    border: none;
+    padding: 0.5rem 8rem;
+}
+
+.shipping-right-container{
+    flex:1;
+    border: 1px solid rgb(192, 191, 191);
+    margin-right: 10%;
+    min-height:40vh ;
+    max-width: 20vw;
+}
+
+.shipping-box-total-title{
+    margin: 3%;
+    font-weight: 800;
+}
+
+.shipping-box-total-detail{
+    display: flex;
+    justify-content: space-between;
+    margin: 1% 5%;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.shipping-box-total-detail-amount{
+    display: flex;
+    justify-content: space-between;
+    margin: 4% 5%;
+    font-size: 22px;
+    font-weight: 600;
+    border-bottom: dashed 2px #000;
+    border-top: dashed 2px #000;
+}
+
+.shipping-box-total-detail-btn{
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+    margin-bottom: 1rem;
+}
+
+.shipping-box-total-detail-btn button{
+   background-color: rgb(64, 167, 64);
+   color: white;
+    width: 80%;
+    height: 100%;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+@media screen and (max-width:1500px) {
+    .shipping-right-container{
+        max-width: 30vw;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .shipping-right-container{
+        max-width: 35vw;
+        margin-right: 5%;
+    }
+
+    .shipping-left-container{
+        margin-left: 5% ;
+        max-width: 45vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .shipping-right-container{
+        max-width: 40vw;
+        margin-right: 2%;
+    }
+
+    .shipping-left-container{
+        margin-left: 2% ;
+        max-width: 50vw;
+    }
+}
+
+@media screen and (max-width:750px){
+    .shipping-container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+       
+    }
+
+    .shipping-right-container{
+        min-width: 80vw;
+        margin-left: 2%;
+    }
+
+    .shipping-left-container{
+        margin-bottom: 1rem;
+        min-width: 80vw;
+        margin-right: 2%;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .shipping-right-container{
+        min-width: 95%;
+        margin-left: 2%;
+    }
+
+    .shipping-left-container{
+        margin-bottom: 1rem;
+        min-width: 95%;
+        margin-right: 2%;
+    }
+}

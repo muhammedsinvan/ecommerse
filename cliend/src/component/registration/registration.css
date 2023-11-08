@@ -1,0 +1,12 @@
+.register-error-message{
+    color: red;
+    font-size: 12px;
+    padding-left: 2rem;
+}
+
+.registration-error{
+    color: red;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: fantasy;
+}

@@ -1,0 +1,10 @@
+.Categories-Container{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    overflow-x: scroll;
+}
+
+.Categories-Container::-webkit-scrollbar {
+   display: none;
+  }

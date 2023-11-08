@@ -1,0 +1,148 @@
+.profile-container{
+margin-top: 2rem;
+margin-bottom: 2rem;
+}
+
+.profile-box{
+    width: 50rem;
+    min-height: 25rem;
+    /* background-color:#ecf3ed; */
+    background-color: white;
+    margin-left: 3%;
+    margin-bottom: 1%;
+}
+
+.profile-title{
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    font-family: monospace;
+    padding: 1rem 0rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.profile-img{
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0rem;
+}
+
+.profile-img img{
+    width: 5rem;
+}
+
+.profile-field{
+    display: flex;
+    margin: 1rem 2rem; 
+}
+
+.profile-field_one{
+    width: 10rem;
+}
+
+.profile-field_one text{
+    font-size: 22px;
+    font-weight: 600;
+    font-family: cursive;
+}
+
+
+.profile-field_two text{
+    margin-left: 1rem;
+    font-size: 20px;
+    padding: 0.5rem 2rem;
+    background-color: white;
+    font-family: fantasy;
+}
+
+.profile-field_three button{
+    margin-left: 1rem;
+    font-size: 20px;
+    background-color: white;
+    font-family: fantasy;
+    background-color: rgb(96, 252, 96);
+    border: none;
+    padding: 0rem 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.profile-edit_btn{
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
+}
+
+.profile-edit_btn button{
+    background-color: rgb(96, 252, 96);
+    border: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.profile-field_two input{
+    margin-left: 5rem;
+    font-size: 20px;
+    padding: 0.3rem 2rem;
+    background-color: white;
+    font-family: fantasy;
+}
+
+.profile-submit_btn{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-submit_btn button{
+    background-color: rgb(96, 252, 96);
+    border: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-weight: 500;
+    margin: 1rem 0rem;
+}
+
+@media screen and (max-width:1150px) {
+    .profile-box{
+        width: 40rem;
+    }
+}
+
+@media screen and (max-width:850px) {
+    .profile-container{
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .profile-box{
+        width: 100%;
+       margin-bottom: 1rem;
+       margin-left: 0rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .profile-field{
+        margin: 1rem 0rem;
+    }
+    
+    .profile-field_one{
+        margin: 0rem 0.5rem;
+        width: 8rem;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .profile-field{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .profile-field_two input{
+        margin: 0rem 1rem;
+    }
+}

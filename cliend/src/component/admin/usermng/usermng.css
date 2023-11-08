@@ -1,0 +1,16 @@
+.usermng-maincontainer{
+    display: flex;
+    justify-content: center;
+    margin: 6rem 5rem;
+    box-shadow: 6px 4px 5px 0px rgba(0,0,0,0.33);
+    -webkit-box-shadow: 6px 4px 5px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: 6px 4px 5px 0px rgba(0,0,0,0.33);
+}
+
+.usermng-container{
+   
+}
+
+.usermng-table{
+    
+}

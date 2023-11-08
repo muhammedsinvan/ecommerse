@@ -1,0 +1,33 @@
+.banner-container{
+    margin: 1rem;
+        /* margin-top: 8rem; */
+        
+}
+
+.banner-title{
+    font-size: 3rem;
+    font-weight: 800;
+    color: darkgreen;
+}
+
+.banner-subtitle{
+    font-size: 1rem;
+    font-weight: 700;
+    color: green;
+}
+
+.banner-button{
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    background-color: green;
+    color: white;
+}
+
+
+.banner-image{
+    width: 100%;
+    object-fit: contain;
+}

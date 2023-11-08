@@ -1,0 +1,99 @@
+.orderdetail-container{
+    display: flex;
+    justify-content: center;
+}
+
+.orderdetail-box{
+    min-width: 40rem;
+   min-height: 70vh;
+    border: 2px solid grey;
+    margin-top: 2rem;
+}
+
+.orderdetail-title{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid rgb(207, 207, 207);
+    margin: 1rem 0rem;
+    font-weight: 800;
+    font-family: monospace;
+}
+
+.orderdetail-subtitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: cursive;
+    border-bottom: 0.5px solid black;
+}
+
+.orderdetail-field{
+    display: flex;
+    margin: 0.5rem 0rem;
+    border-bottom: 2px solid rgb(207, 207, 207);
+}
+
+
+.orderdetail-field_one{
+    min-width: 20rem;
+    padding-left: 2rem;
+    font-family: fantasy;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.orderdetail-field_two{
+    font-size: 20px;
+    padding-left: 1rem;
+}
+
+
+.orderdetail-productfield{
+    display: flex;
+    justify-content: space-around;
+}
+
+.orderdetail-productfield text{
+    font-size: 20px;
+    margin-top: 0.5rem;
+}
+
+.orderdetail-shipping{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    border-bottom: 1px solid black;
+    border-bottom-style: dashed;
+}
+
+.orderdetail-total{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+}
+
+.orderdetail-button{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0rem;
+}
+
+.orderdetail-button button{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+@media screen and (max-width:700px) {
+    .orderdetail-box{
+        min-width: fit-content;
+     }
+    .orderdetail-field{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
