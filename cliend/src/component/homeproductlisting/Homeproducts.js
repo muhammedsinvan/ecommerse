@@ -98,6 +98,7 @@ useEffect(() => {
       <p>Please make login</p>
       </div>
       }
+      
     <div className='homeproducts-box-container'>
       
       {data?.map((item)=>(

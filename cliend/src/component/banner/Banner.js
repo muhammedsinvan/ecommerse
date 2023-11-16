@@ -1,12 +1,10 @@
 import './banner.css'
 import {Carousel} from "react-bootstrap"
-
-import { sliderItems } from '../../data'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 const Banner = () => {
 
-  const [data,setData] = useState([])
+  const [datas,setData] = useState([])
 
   useEffect(()=>{
     (async()=>{
@@ -19,9 +17,10 @@ const Banner = () => {
     })()
   },[])
 
+  console.log(datas)
   return (
-    <Carousel className='banner-container'>
-        {data?.map((val)=>(
+  <Carousel className='banner-container'>
+        {datas?.map((val)=>(
   <Carousel.Item interval={5000}>
     <img className="banner-image"
       src={val.image}
