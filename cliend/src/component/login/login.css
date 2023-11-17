@@ -237,7 +237,7 @@ input[type="password"]{
 }
 
 .warning{
-    border:1px solid red !important;
+    border:1px solid rgb(250, 5, 5) !important;
 }
 .green{
     background-color:green !important;
