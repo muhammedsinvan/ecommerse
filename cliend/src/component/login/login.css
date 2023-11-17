@@ -219,7 +219,7 @@ input[type="password"]{
     transition:all 0.5s;
 }
 .button button:hover{
-    background-color:#e33606;
+    background-color:#db3305;
 }
 .register{
     margin-top:30px;
