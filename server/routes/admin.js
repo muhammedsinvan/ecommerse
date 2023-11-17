@@ -60,8 +60,8 @@ router.post("/updateproduct/:id", updateproduct);
 
 router.get("/getallorder", protect ,getallorder);
 
-router.get("/getoneorder/:orderid",protect,getoneorder)
+router.get("/getoneorder/:orderid",protect,getoneorder);
 
-router.post("/updateorderstatus/:orderid",updateorderstatus)
+router.post("/updateorderstatus/:orderid",updateorderstatus);
 
 export default router;
