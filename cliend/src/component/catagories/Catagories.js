@@ -10,7 +10,7 @@ const Catagories = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get("/getcatagory")
+        let res = await axios.get("/api/getcatagory")
         setData(res.data)
       }catch(error){
         console.log(error)

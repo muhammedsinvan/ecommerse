@@ -27,7 +27,7 @@ const Homeproducts = () => {
 
   useEffect(()=>{
     (async()=>{
-      let res = await axios.get('/getsortedproduct')
+      let res = await axios.get('/api/getsortedproduct')
       setData(res.data)
     })()
   },[])
@@ -36,7 +36,7 @@ const Homeproducts = () => {
     (async()=>{
         try{
           if(user){
-            let res = await axios.get(`/getcartitem/${user}`,config)
+            let res = await axios.get(`/api/getcartitem/${user}`,config)
             setCartdata(res.data.cartitem)
           }else{
             setCartdata()
@@ -65,7 +65,7 @@ useEffect(() => {
    
     try{
       if(user){
-        let res = await axios.post(`/addtocart/${user}/${qty}`,{productid});
+        let res = await axios.post(`/api/addtocart/${user}/${qty}`,{productid});
         setRefresh(!refresh)
       }else{
         alert();
