@@ -36,7 +36,7 @@ const CheckoutDetail = () => {
   useEffect(() => {
     (async () => {
       try {
-        let res = await axios.get(`/getuseraddres/${userid}/${params.addressid}`,config);
+        let res = await axios.get(`/api/getuseraddres/${userid}/${params.addressid}`,config);
         console.log(res.data)
         setAddress(res.data);
       } catch (error) {
@@ -48,7 +48,7 @@ const CheckoutDetail = () => {
   useEffect(() => {
     (async () => {
       try {
-        let res = await axios.get(`/getcartitem/${userid}`,config);
+        let res = await axios.get(`/api/getcartitem/${userid}`,config);
         setCartdata(res.data.cartitem);
         setGrandtotal(res.data.grandtotal);
       } catch (error) {

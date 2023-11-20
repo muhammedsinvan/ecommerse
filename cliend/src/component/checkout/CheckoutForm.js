@@ -58,7 +58,7 @@ const CheckoutForm =(props)=>{
         try {
             setLoading(true)
             const {id} = paymentMethod
-            const response = await axios.post("/stripe/payment", {
+            const response = await axios.post("/api/stripe/payment", {
                 amount: grandtotal,
                 id,
                 userid,

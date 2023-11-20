@@ -44,7 +44,7 @@ const Registration = () => {
 
    const onsubmit = async(data) => {
     try{
-       await axios.post("/signup",data)
+       await axios.post("/api/signup",data)
       navigate('/signin')
     }catch(error){
       setError(error.response.data)

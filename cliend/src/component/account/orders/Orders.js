@@ -25,7 +25,7 @@ const Orders = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get(`/getorders/${userid}`,config)
+        let res = await axios.get(`/api/getorders/${userid}`,config)
         setData(res.data)
       }catch(error){
         console.log(error) 

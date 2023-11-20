@@ -37,7 +37,7 @@ const Shipping = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get(`/getshippingaddress/${userid}`,config)
+        let res = await axios.get(`/api/getshippingaddress/${userid}`,config)
         setAddress(res.data)
       }catch(error){
         console.log(error)
@@ -47,7 +47,7 @@ const Shipping = () => {
 
   const removeaddress = async (addressid)=>{
     try{
-      let res = await axios.post(`/removeaddress/${userid}`,{addressid})
+      let res = await axios.post(`/api/removeaddress/${userid}`,{addressid})
       setRefresh(!refresh)
     }catch(error){
       console.log(error)
@@ -57,7 +57,7 @@ const Shipping = () => {
   useEffect(()=>{ 
     (async()=>{
         try{
-            let res = await axios.get(`/getcartitem/${userid}`,config)
+            let res = await axios.get(`/api/getcartitem/${userid}`,config)
             setCart(res.data)
             setCartdata(res.data.cartitem)
             setGrandtotal(res.data.grandtotal)

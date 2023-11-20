@@ -36,7 +36,7 @@ const Productdetail = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get(`/getproductdetail/${params.id}`);
+        let res = await axios.get(`/api/getproductdetail/${params.id}`);
         setDetail(res.data)
         setViewimage(res.data.image1)
       }catch(error){
@@ -49,7 +49,7 @@ const Productdetail = () => {
     (async()=>{
         try{
           if(user){
-            let res = await axios.get(`/getcartitem/${user}`,config)
+            let res = await axios.get(`/api/getcartitem/${user}`,config)
             setCartdata(res.data.cartitem)
           }else{
             setCartdata()
@@ -70,7 +70,7 @@ const Productdetail = () => {
     console.log(type)
     try{
       if(user){
-        let res = await axios.post(`/addtocart/${user}/${qty}`,{productid})
+        let res = await axios.post(`/api/addtocart/${user}/${qty}`,{productid})
         console.log(res)
         if(type=='cart'){
           setRefresh(!refresh)

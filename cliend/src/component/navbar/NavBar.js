@@ -32,7 +32,7 @@ const NavBar = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get('/checktoken',config)
+        let res = await axios.get('/api/checktoken',config)
         setToken(localStorage.getItem('usertoken'))
       }catch(error){
         localStorage.removeItem('usertoken')

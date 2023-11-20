@@ -24,7 +24,7 @@ const Orderdetail = () => {
   useEffect(()=>{
     (async()=>{
     try{
-      let res = await axios.get(`/order/detail/${params.id}`,config)
+      let res = await axios.get(`/api/order/detail/${params.id}`,config)
       setData(res.data)
       setProducts(res.data.products)
     }catch(error){

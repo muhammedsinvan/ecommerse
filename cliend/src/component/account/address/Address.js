@@ -27,7 +27,7 @@ const Address = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get(`/getshippingaddress/${userid}`,config)
+        let res = await axios.get(`/api/getshippingaddress/${userid}`,config)
         setAddress(res.data)
       }catch(error){
         console.log(error)
@@ -37,7 +37,7 @@ const Address = () => {
 
   const removeaddress = async (addressid)=>{
     try{
-      let res = await axios.post(`/removeaddress/${userid}`,{addressid})
+      let res = await axios.post(`/api/removeaddress/${userid}`,{addressid})
       setRefresh(!refresh)
     }catch(error){
       console.log(error)

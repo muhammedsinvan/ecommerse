@@ -22,7 +22,7 @@ const Usermng = () => {
   useEffect(()=>{
   (async()=>{
     try{
-      const res = await axios.get('/admin/userlist',config)
+      const res = await axios.get('/api/admin/userlist',config)
       setData(res.data)
       console.log(data)
     }catch(err){

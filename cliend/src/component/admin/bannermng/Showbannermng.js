@@ -21,7 +21,7 @@ const Showbannermng = () => {
     useEffect(()=>{
       (async()=>{
         try{
-          let res = await axios.get('/admin/getallbanner',config)
+          let res = await axios.get('/api/admin/getallbanner',config)
           setData(res.data)
         }catch(error){
           console.log(error)
@@ -31,7 +31,7 @@ const Showbannermng = () => {
 
     const deletebanner = async(id) =>{
       try{
-        let res = await axios.post(`/admin/deletebaner/${id}`)
+        let res = await axios.post(`/api/admin/deletebaner/${id}`)
         setRefresh(!refresh)
         console.log(res)
       }catch(error){

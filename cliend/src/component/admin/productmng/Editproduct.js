@@ -63,7 +63,7 @@ const Editproduct = () => {
   useEffect(()=>{
         (async()=>{
           try{
-            let data = await axios.get(`/admin/productdata/${params.id}`)
+            let data = await axios.get(`/api/admin/productdata/${params.id}`)
             setData(data.data)
             
           }catch(error){
@@ -140,7 +140,7 @@ const Editproduct = () => {
                 wholesaleprice:values.wholesaleprice,
                 retailprice:values.retailprice
         }
-        const res = await axios.post(`/admin/updateproduct/${params.id}`,updateProduct)
+        const res = await axios.post(`/api/admin/updateproduct/${params.id}`,updateProduct)
         console.log(res.data)
         if(res.data){
           navigate('/admin/showproduct')

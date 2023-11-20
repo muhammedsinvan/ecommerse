@@ -43,7 +43,7 @@ const Addcatagorymng = () => {
                 image:baseImage1
             }
 
-            let res = await axios.post('/admin/addcatagory',newcatagory)
+            let res = await axios.post('/api/admin/addcatagory',newcatagory)
             if(res){
               navigate('/admin/showcatagory')
             }
@@ -60,7 +60,7 @@ const Addcatagorymng = () => {
             image:baseImage1
         }
 
-        let res = await axios.post(`/admin/updatecatagory/${params.id}`,newcatagory)
+        let res = await axios.post(`/api/admin/updatecatagory/${params.id}`,newcatagory)
         if(res){
           navigate('/admin/showcatagory')
         }
@@ -73,7 +73,7 @@ const Addcatagorymng = () => {
         if(params.id){
           (async()=>{
             try{
-              let res = await axios.get(`/admin/catagorydata/${params.id}`)
+              let res = await axios.get(`/api/admin/catagorydata/${params.id}`)
               setCatagoryName(res.data.name)
               setCatagoryButton(res.data.button)
               setImage(res.data.image)

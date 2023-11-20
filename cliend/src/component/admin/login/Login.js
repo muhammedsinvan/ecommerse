@@ -36,7 +36,7 @@ const Login = () => {
 
       const onsubmit = async(data) => {
         try{
-          let res = await axios.post("/admin/signin",data)
+          let res = await axios.post("/api/admin/signin",data)
           localStorage.setItem('admintoken',res.data.jsontoken)
           navigate('/admin/home')
           

@@ -58,7 +58,7 @@ const Addbannermng = () => {
         button,
         image:baseImage
       }
-      let res = await axios.post('/admin/addbanner',newbanner)
+      let res = await axios.post('/api/admin/addbanner',newbanner)
       if(res) {
         navigate("/admin/showbanner")
       }
@@ -71,7 +71,7 @@ const Addbannermng = () => {
     if(params.id){
       (async()=>{
         try{
-          let res = await axios.get(`/admin/getbannerdata/${params.id}`,config)
+          let res = await axios.get(`/api/admin/getbannerdata/${params.id}`,config)
           setTitle(res.data.title)
           setDetail(res.data.detail)
           setUrl(res.data.url)
@@ -93,7 +93,7 @@ const Addbannermng = () => {
         image:baseImage
       }
 
-      let res = await axios.post(`/admin/updatebanner/${params.id}`,newbanner)
+      let res = await axios.post(`/api/admin/updatebanner/${params.id}`,newbanner)
       if (res){
         navigate('/admin/showbanner')
       }

@@ -22,7 +22,7 @@ const Ordermng = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get('/admin/getallorder',config)
+        let res = await axios.get('/api/admin/getallorder',config)
       setData(res.data)
       }catch(error){
         console.log(error)
@@ -32,7 +32,7 @@ const Ordermng = () => {
 
   const updatestatus =async(status,orderid)=>{
    try{
-     let res = await axios.post(`/admin/updateorderstatus/${orderid}`,{status})
+     let res = await axios.post(`/api/admin/updateorderstatus/${orderid}`,{status})
      console.log(res)
    }catch(error){
     console.log(error)

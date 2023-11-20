@@ -32,7 +32,7 @@ const Navbar = () => {
     useEffect(()=>{
         (async()=>{
           try{
-            let res = await axios.get('/checktoken',config)
+            let res = await axios.get('/api/checktoken',config)
           }catch(error){
             localStorage.removeItem('admintoken')
             navigate('/admin')

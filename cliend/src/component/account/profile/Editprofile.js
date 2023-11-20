@@ -25,7 +25,7 @@ const Editprofile = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get(`/userdata/${userid}`,config)
+        let res = await axios.get(`/api/userdata/${userid}`,config)
         setUsername(res.data.username)
         setEmail(res.data.email)
       }catch(error){
@@ -37,10 +37,10 @@ const Editprofile = () => {
   const onSubmit = async ()=>{
     try{
       if(params.data === 'username'){
-        const data = await axios.post(`/updateprofile/${userid}`,{username})
+        const data = await axios.post(`/api/updateprofile/${userid}`,{username})
         console.log(data)
       }else{
-        const data = await axios.post(`/updateprofile/${userid}`,{email})
+        const data = await axios.post(`/api/updateprofile/${userid}`,{email})
         console.log(data)
       }
     }catch(error){

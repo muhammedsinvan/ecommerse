@@ -56,7 +56,7 @@ const Addressform = (props) => {
       (async () => {
         try {
           if (params.addressid) {
-            let res = await axios.post(`/editshippingaddress/${userid}/${params.addressid}`,{values})
+            let res = await axios.post(`/api/editshippingaddress/${userid}/${params.addressid}`,{values})
             if (res.data) {
               if (props.type == "accounts") {
                 navigate("/accounts/address");
@@ -65,7 +65,7 @@ const Addressform = (props) => {
               }
             }
           } else {
-            let res = await axios.post(`/addshippingaddress/${userid}`, {
+            let res = await axios.post(`/api/addshippingaddress/${userid}`, {
               values,
             });
             if (res.data) {
@@ -88,7 +88,7 @@ const Addressform = (props) => {
       (async () => {
         try {
           let res = await axios.get(
-            `/getuseraddres/${userid}/${params.addressid}`,config
+            `/api/getuseraddres/${userid}/${params.addressid}`,config
           );
           setData(res.data);
         } catch (error) {

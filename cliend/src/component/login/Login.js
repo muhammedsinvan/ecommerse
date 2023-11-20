@@ -59,7 +59,7 @@ const validationSchema = Yup.object().shape({
  
   const onsubmit = async(data) => {
     try{
-       let res = await axios.post("/signin",data)
+       let res = await axios.post("/api/signin",data)
        console.log(res)
        localStorage.setItem('usertoken',res.data.jsontoken)
        localStorage.setItem('userid',res.data._id)

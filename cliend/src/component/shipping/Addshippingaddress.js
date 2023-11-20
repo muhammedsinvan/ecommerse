@@ -28,7 +28,7 @@ const Addshippingaddress = () => {
     useEffect(()=>{ 
         (async()=>{
             try{
-                let res = await axios.get(`/getcartitem/${userid}`,config)
+                let res = await axios.get(`/api/getcartitem/${userid}`,config)
                 setCartdata(res.data.cartitem)
                 setGrandtotal(res.data.grandtotal)
                }catch(error){

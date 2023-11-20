@@ -22,7 +22,7 @@ const Orderdetail = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get(`/admin/getoneorder/${params.orderid}`,config)
+        let res = await axios.get(`/api/admin/getoneorder/${params.orderid}`,config)
         setData(res.data)
       }catch(error){
         console.log(error)

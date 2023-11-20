@@ -23,7 +23,7 @@ const Showproduct = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get('/admin/getallproduct',config)
+        let res = await axios.get('/api/admin/getallproduct',config)
         setData(res.data)
       }catch(error){
         localStorage.clear('admintoken')
@@ -34,7 +34,7 @@ const Showproduct = () => {
 
   const deleteproduct =async(id)=>{
     try{
-      let res = await axios.post(`/admin/deleteproduct/${id}`)
+      let res = await axios.post(`/api/admin/deleteproduct/${id}`)
       setRefresh(!refresh)
       console.log(res)
     }catch(error){

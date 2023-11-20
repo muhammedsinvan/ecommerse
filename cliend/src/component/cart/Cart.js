@@ -25,7 +25,7 @@ const Cart = () => {
     useEffect(()=>{ 
         (async()=>{
             try{
-                let res = await axios.get(`/getcartitem/${userid}`,config)
+                let res = await axios.get(`/api/getcartitem/${userid}`,config)
                 setCartdata(res.data)
                 setGrandtotal(res.data.grandtotal)
                }catch(error){
@@ -38,7 +38,7 @@ const Cart = () => {
  
     const removeitem = async (itemid)=>{
         try{
-            let res = await axios.post(`/removecartitem/${userid}`,{itemid})
+            let res = await axios.post(`/api/removecartitem/${userid}`,{itemid})
             console.log(res)
             setRefresh(!refresh)
         }catch(error){
@@ -48,7 +48,7 @@ const Cart = () => {
 
     const addqty = async (itemid) => {
       try{
-        let res = await axios.post(`/updatecartqty/${userid}`,{itemid})
+        let res = await axios.post(`/api/updatecartqty/${userid}`,{itemid})
         setRefresh(!refresh)
         console.log(res)
       }catch(error){
@@ -59,7 +59,7 @@ const Cart = () => {
     const lessqty = async(itemid)=>{
         try{
             console.log("heyond")
-            let res = await axios.post(`/lesscartqty/${userid}`,{itemid})
+            let res = await axios.post(`/api/lesscartqty/${userid}`,{itemid})
             setRefresh(!refresh)
             console.log(res)
         }catch(error){

@@ -21,7 +21,7 @@ const Showcatagorymng = () => {
   useEffect(() => {
     (async()=>{
       try{
-        let res = await axios.get('/admin/getcatagory',config)
+        let res = await axios.get('/api/admin/getcatagory',config)
         setData(res.data)
       }catch(error){
         console.log(error)
@@ -31,7 +31,7 @@ const Showcatagorymng = () => {
 
   const deletecatagory =async(id)=>{
     try{
-      let res = await axios.post(`/admin/deletecatagory/${id}`)
+      let res = await axios.post(`/api/admin/deletecatagory/${id}`)
       setRefresh(!refresh)
       console.log(res)
     }catch(error){

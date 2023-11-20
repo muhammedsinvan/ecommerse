@@ -26,7 +26,7 @@ const Profile = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get(`/userdata/${userid}`,config)
+        let res = await axios.get(`/api/userdata/${userid}`,config)
         setData(res.data)
       }catch(error){
         console.log(error)
