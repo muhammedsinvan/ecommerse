@@ -9,7 +9,7 @@ const Banner = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get('/api/getbanner')
+        let res = await axios.get('/getbanner')
         setData(res.data)
       }catch(error){
         console.log(error)
