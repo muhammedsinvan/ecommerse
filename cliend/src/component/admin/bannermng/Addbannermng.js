@@ -90,6 +90,7 @@ const Addbannermng = () => {
         title,
         detail,
         button,
+        url,
         image:baseImage
       }
 

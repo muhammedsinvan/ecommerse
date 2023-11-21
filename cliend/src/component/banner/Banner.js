@@ -2,7 +2,10 @@ import './banner.css'
 import {Carousel} from "react-bootstrap"
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 const Banner = () => {
+
+  const navigate = useNavigate();
 
   const [datas,setData] = useState([])
 
@@ -20,17 +23,15 @@ const Banner = () => {
   console.log(datas)
   return (
   <Carousel className='banner-container'>
-        {datas?.map((val)=>( 
+        {datas?.map((val)=>(  
   <Carousel.Item interval={5000}>
-    <img className="banner-image"
+    <div className="banner-image"  onClick={()=>navigate(`${val.url}`)}>
+    <img 
       src={val.image} 
       alt="First slide"
     />
-    <Carousel.Caption>
-      <p className='banner-title'>{val.title}</p>
-      <p className='banner-subtitle'>{val.detail}</p>
-      <button className='banner-button'>{val.button}</button>
-    </Carousel.Caption>
+    </div>
+
   </Carousel.Item>
         ))} 
   </Carousel>

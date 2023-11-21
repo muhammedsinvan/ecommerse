@@ -118,7 +118,7 @@ const deleteproduct = async (req, res) => {
 
   try {
     await data.remove();
-    res.status(200).json("catagory deleted successfully");
+    res.status(200).json("product deleted successfully");
   } catch (error) {
     res.status(500);
     res.json(error);
@@ -218,10 +218,11 @@ const getcatagory = async (req, res) => {
 
 const deletecatagory = async (req, res) => {
   try {
-    let data = await catagory.findById(req.params.id);
+    console.log(req.params.id)
     const response = await cloudinary.uploader.destroy(data.image, {
       invalidate: true,
     });
+    console.log(response)
     if (response.result) {
       await data.remove();
       res.status(200).json("catagory deleted successfully");

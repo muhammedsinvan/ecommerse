@@ -10,21 +10,23 @@
 .productdetail-image-container-list{
     display: flex;
     flex-direction: column;
-    width: 30%;
-    min-height: 60vh;
+    width: 25%;
     margin: 1rem;
 }
 
 .productdetail-image-container-list img{
-    width: fit-content;
+    width: 100%;
     height: 15vh;
     margin: 0.5rem 1rem;
     cursor: pointer;
+    border-radius: 10%;
+    border-style: ridge;
 }
 
 .productdetail-image-container-view{
-    width: 60%;
-    min-height: 40vh;
+    width: 50%;
+    height: 65vh;
+    margin: 1rem;
 }
 
 .productdetail-image-container-view img{
@@ -38,13 +40,19 @@
 
 .productdetail-desc-container{
     flex: 1;
-    margin-left: 1rem;
+    
   
 }
 
 .productdetail-desc-container-title{
     font-size: 30px;
     font-weight: 800;
+    margin-left: 1rem;
+}
+
+.productdetail-desc-container-price{
+    display: flex;
+    margin-left: 1rem;
 }
 
 .productdetail-desc-container-discountprice{
@@ -60,18 +68,16 @@
     color: rgb(2, 2, 2);
 }
 
-.productdetail-desc-container-price{
-    display: flex;
-}
-
 .productdetail-desc-container-text{
     width: 75%;
     font-size: 20px;
     font-weight: 300;
+    margin-left: 1rem;
 }
 
 .productdetail-desc-container-points{
     margin: 1rem 0rem;
+    margin-left: 1rem;
 }
 
 .productdetail-desc-container-points li{
@@ -118,7 +124,12 @@
 .productdetail-desc-container-addcart{
     font-size: 15px;
     font-weight: 600;
-   
+    margin: 0rem;
+}
+
+.productdetail-desc-container-button{
+    display: flex;
+    justify-content: space-around;
 }
 
 .productdetail-image-container-view{
@@ -134,13 +145,16 @@
 .productdetail-image-container-mb{
     display: flex;
     flex-direction: column;
+   
 }
 .productdetail-image-container-view-mb{
-    width: 100%;
-    min-height: 40vh;
+    width: 90%;
+    height: 40vh;
+    margin: 1rem 0rem;
 }
 
 .productdetail-image-container-view-mb img{
+    margin-left: 5%;
     width: 100%;
     height: 100%;
 }
@@ -148,18 +162,23 @@
 .productdetail-image-container-list-mb{
     display: flex;
     flex-direction: row;
-    justify-content: center;
     width: 100%;
     min-height: 20vh;
-    
+    overflow-x: scroll;
 }
+
+.productdetail-image-container-list-mb::-webkit-scrollbar {
+    display: none;
+   }
+ 
 
 .productdetail-image-container-list-mb img{
     width: 24%;
     height: 15vh;
-    margin: 0.5rem 0rem;
     cursor: pointer;
-    border-right: .5px solid lightgreen;
+    margin-right: 1rem;
+    border-radius: 10%;
+    border-style:groove ;
 }
 
 }
