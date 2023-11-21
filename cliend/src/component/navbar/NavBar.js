@@ -62,7 +62,7 @@ const NavBar = () => {
   return (  
     <div className='navbar-container'>
     <nav className="navbar-user">
-    <div className="brand-title">VERDEELIFE</div>
+    <div className="brand-title" onClick={()=>navigate('/')}>VERDEELIFE</div>
     <a href="#" onClick={togglebutton} class="toggle-button">
       <span className="bar"></span>
       <span className="bar"></span>

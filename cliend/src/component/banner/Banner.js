@@ -20,10 +20,10 @@ const Banner = () => {
   console.log(datas)
   return (
   <Carousel className='banner-container'>
-        {datas?.map((val)=>(
+        {datas?.map((val)=>( 
   <Carousel.Item interval={5000}>
     <img className="banner-image"
-      src={val.image}
+      src={val.image} 
       alt="First slide"
     />
     <Carousel.Caption>
