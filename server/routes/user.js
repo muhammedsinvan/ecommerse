@@ -3,6 +3,7 @@ const router = express.Router();
 import {
   signupdata,
   signindata,
+  getonecatagory,
   getcatagoryproduct,
   getproductdetail,
   addtocart,
@@ -33,6 +34,8 @@ router.post("/signin", signindata);
 router.get("/getbanner", getallbanner);
 
 router.get("/getcatagory", getcatagory);
+
+router.get("/getonecatagory/:type",getonecatagory)
 
 router.get("/getcatagoryproducts/:item", getcatagoryproduct);
 

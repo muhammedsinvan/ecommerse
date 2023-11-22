@@ -99,6 +99,7 @@
     font-weight: 700;
     background-color: rgb(97, 160, 97);
     color: white;
+    border-radius: 20px;
 }
 
 .homeproducts-text-box-gotocrtbtn,.homeproducts-text-box-crtbtn{
@@ -111,6 +112,7 @@
     background-color: rgb(255, 255, 255);
     color: rgb(97, 160, 97);
     border: 1px solid rgb(97, 160, 97);
+    border-radius: 20px;
 }
 
 .homeproducts-text-box-buybtn:hover{
@@ -140,7 +142,15 @@
 }
 
 @media screen and (max-width:500px) {
+    .homeproducts-img{
+        width: 100%;
+        padding: 0.5rem;
+        height: 13em;
+    }
     .homeproducts-box{
-        width: 90%;
+        width: 46%;
+        min-height: 40vh;
+        margin: 1% 2%;
+        border-radius: .25rem;
     }
 }

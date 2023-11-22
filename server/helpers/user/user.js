@@ -5,6 +5,7 @@ import product from "../../models/addproduct.js";
 import cart from "../../models/cart.js";
 import Stripe from "stripe";
 import order from '../../models/orders.js'
+import catagory from "../../models/addcatagory.js";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET);
 
@@ -56,6 +57,17 @@ const signindata = async (req, res) => {
     res.json(error);
   }
 };
+
+const getonecatagory = async (req,res)=>{
+  try{
+    console.log(req.params.type)
+    const data = await catagory.findOne({name:req.params.type})
+    res.json(data);
+  }catch(error){
+    res.status(500);
+    res.json(error);
+  }
+}
 
 const getcatagoryproduct = async (req, res) => {
   try {
@@ -425,6 +437,7 @@ const orderdetail = async (req,res)=>{
 export {
   signupdata, 
   signindata,
+  getonecatagory,
   getcatagoryproduct,
   getproductdetail,
   addtocart,

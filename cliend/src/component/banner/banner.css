@@ -17,9 +17,9 @@
     cursor: pointer;
 }
 
-/* @media screen and (max-width:520px) {
+@media screen and (max-width:520px) {
     .banner-image{
         width: 100%;
         height: 22vh;
     }
-} */
+}
