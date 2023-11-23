@@ -6,6 +6,7 @@ import cart from "../../models/cart.js";
 import Stripe from "stripe";
 import order from '../../models/orders.js'
 import catagory from "../../models/addcatagory.js";
+import nodemailer from "nodemailer";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET);
 
@@ -434,6 +435,64 @@ const orderdetail = async (req,res)=>{
   }
 }
 
+const checkmail = async(req,res)=>{
+  const {email} = req.body;
+  try{
+let response = await user.findOne({email})
+if(response){
+  const token = jwt.sign({id:response._id},process.env.JWT_SEC, {
+    expiresIn:"1d"
+  });
+  var transporter = nodemailer.createTransport({
+    service:"gmail",
+    auth:{
+      user: "verdeelifeshop@gmail.com",
+      pass:"quiqziwfxywnvmeq"
+    },
+  });
+  var mailOptions = {
+    from: "verdeelifeshop@gmail.com",
+    to: response.email,
+    subject: "Reset your password",
+    text: `http://13.53.125.152/forgotpassword/newpassword/${response._id}/${token}`,
+  };
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+      res.status(200).json(info.response);
+    }
+  });
+}else {
+  res.status(400).json("Email does not exist");
+}
+  }catch(error){
+    res.status(500).json(error);
+  }
+}
+
+const newpassword = async(req,res)=>{
+  const {data} = req.body;
+  const {id,token} = req.params;
+  jwt.verify(token,process.env.JWT_SEC,(err,decoded)=>{
+    if(err){
+      res.status(400).json('Token invalid')
+    }
+  })
+  try{
+    if (data.password === data.confirmpassword){
+      const encryptpass =""+CryptoJS.AES.encrypt(data.password,process.env.PASS_KEY);
+      const updatepassword = await user.findByIdAndUpdate({_id:id},{password:encryptpass});
+     res.json(updatepassword);
+    }else{
+      res.status(400).json("Incorrect Password")
+    }
+  }catch(error){
+    res.status(500).json(error);
+  }
+}
+
 export {
   signupdata, 
   signindata,
@@ -456,5 +515,7 @@ export {
   stripepayment,
   checktoken,
   getorders,
-  orderdetail
+  orderdetail,
+  checkmail,
+  newpassword
 };

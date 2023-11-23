@@ -28,7 +28,7 @@
 .homeproducts-img{
     width: 100%;
     padding: 1rem;
-    height: 15em;
+    height: 15rem;
     /* background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat; */
@@ -145,7 +145,7 @@
     .homeproducts-img{
         width: 100%;
         padding: 0.5rem;
-        height: 13em;
+        height: 10em;
     }
     .homeproducts-box{
         width: 46%;

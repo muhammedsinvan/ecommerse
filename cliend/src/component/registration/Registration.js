@@ -108,7 +108,7 @@ const Registration = () => {
                     </div>
                      </form>
                     <div className="register">
-                        <p onClick={()=>navigate('/signin')}>Already have an account?<a href="#"> Login</a></p>
+                        <p onClick={()=>navigate('/signin')}>Already have an account?<text> Login</text></p>
                     </div>
     
                </div>

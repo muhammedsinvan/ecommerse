@@ -113,11 +113,11 @@ console.log(errorMessage)
                     </div>
                    
                     <div className="rem_pass">
-                        <div className="remember">
+                        {/* <div className="remember">
                              <span onClick={Tick} className={` ${tick ? "green" : ""}`}><i className="fa fa-check"></i></span>
                              <p>Remember Me</p>
-                        </div>
-                        <a href="#">Forgot your password?</a>
+                        </div> */}
+                        <text onClick={()=>navigate("/forgetpassword")}>Forgot your password?</text>
                     </div>
                     <div className="button">
                         <button type="submit">Login</button>
@@ -125,7 +125,7 @@ console.log(errorMessage)
                     </div>
                      </form>
                     <div className="register">
-                        <p onClick={()=>navigate('/signup')}>Didn't have an account?<a href="#"> Register</a></p>
+                        <p onClick={()=>navigate('/signup')}>Didn't have an account?<text > Register</text></p>
                     </div>
     
                 

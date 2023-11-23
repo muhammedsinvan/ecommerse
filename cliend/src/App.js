@@ -29,6 +29,8 @@ import Editproduct from "./pages/admin/Editproduct";
 import Notfound from "./component/notfound/Notfound";
 import CheckoutDetail from "./pages/CheckoutDetail";
 import CheckoutSuccess from "./pages/checkoutSuccess";
+import Forgetpasswordpage from "./pages/Forgetpasswordpage";
+import Newpasswordpage from "./pages/Newpasswordpage";
 
 
 
@@ -60,6 +62,8 @@ function App() {
         <Route path="/shipping/checkout" element={<CheckoutDetail/>} />
         <Route path="/shipping/checkout/:addressid" element={<CheckoutDetail/>} />
         <Route path="/shipping/checkout/sucsess" element={<CheckoutSuccess/>} />
+        <Route path="/forgetpassword" element={<Forgetpasswordpage/>} />
+        <Route path="/forgotpassword/newpassword/:id/:token" element={<Newpasswordpage/>} />
       
         <Route path="/admin/home" element={<AdminHome/>} />
         <Route path="/admin/usermanagment" element={<Usermng/>} />
