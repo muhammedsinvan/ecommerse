@@ -31,6 +31,7 @@ import CheckoutDetail from "./pages/CheckoutDetail";
 import CheckoutSuccess from "./pages/checkoutSuccess";
 import Forgetpasswordpage from "./pages/Forgetpasswordpage";
 import Newpasswordpage from "./pages/Newpasswordpage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 
 
@@ -61,6 +62,7 @@ function App() {
         <Route path="/signup/otp" element={<Otp/>} />
         <Route path="/shipping/checkout" element={<CheckoutDetail/>} />
         <Route path="/shipping/checkout/:addressid" element={<CheckoutDetail/>} />
+        <Route path="/shipping/stripcheckout/:addressid" element={<CheckoutPage/>} />
         <Route path="/shipping/checkout/sucsess" element={<CheckoutSuccess/>} />
         <Route path="/forgetpassword" element={<Forgetpasswordpage/>} />
         <Route path="/forgotpassword/newpassword/:id/:token" element={<Newpasswordpage/>} />

@@ -2,18 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./CheckoutDetail.css";
 import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
-import Chekout from "../checkout/Chekout";
 
 const CheckoutDetail = () => {
   const [address, setAddress] = useState([]);
   const [cartdata, setCartdata] = useState([]);
   const [grandtotal, setGrandtotal] = useState();
   const [error,setError] = useState(true)
-  const [isComponentVisible, setComponentVisible] = useState(false);
 
   const showComponent = () => {
     if(address.name){
-      setComponentVisible(true);
+      navigate(`/shipping/stripcheckout/${address._id}`)
     }else{
       setError(false)
     }
@@ -145,7 +143,6 @@ const CheckoutDetail = () => {
         >
           <button>PROCEED TO PAYMENT</button>
         </div>
-        {isComponentVisible && <div className="chekout-page-component active"><Chekout /></div>}
       </div>
     </div>
   );
