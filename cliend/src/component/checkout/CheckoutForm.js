@@ -105,7 +105,7 @@ const CheckoutForm =(props)=>{
                 </div>
             </fieldset>
 
-            {loading?<button className="submit-btn"  disabled>Processing....</button>:<button>Pay</button>}
+            {loading?<button className="submit-btn"  disabled>Processing....</button>:<button>Pay ₹{grandtotal+40}</button>}
         </form>
         :
         <div className="checkoutform-payment-success">

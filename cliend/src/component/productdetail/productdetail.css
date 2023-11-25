@@ -40,8 +40,6 @@
 
 .productdetail-desc-container{
     flex: 1;
-    
-  
 }
 
 .productdetail-desc-container-title{
@@ -69,11 +67,14 @@
 }
 
 .productdetail-desc-container-text{
-    width: 75%;
+    width: 80%;
     font-size: 20px;
     font-weight: 300;
     margin-left: 1rem;
+    background-color: grey;
 }
+
+
 
 .productdetail-desc-container-points{
     margin: 1rem 0rem;
@@ -120,6 +121,8 @@
 }
 
 @media screen and (max-width:520px) {
+ 
+
     .productdetail-desc-container-buynow,
 .productdetail-desc-container-addcart{
     font-size: 15px;

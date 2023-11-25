@@ -131,6 +131,8 @@
     background-color: rgb(80, 202, 80);
     border: none;
     padding: 0.5rem 8rem;
+    font-family: cursive;
+    border-radius: 20px;
 }
 
 .shipping-right-container{

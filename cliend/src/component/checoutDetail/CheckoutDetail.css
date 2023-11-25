@@ -77,6 +77,8 @@
     color: white;
     padding: 0.3rem 1rem ;
     font-weight: 700;
+    font-family: cursive;
+    border-radius: 20px;
 }
 
 .checkoutDetail-address-oneaddress-error button{
@@ -131,14 +133,17 @@
 }
 
 .checkoutDetail-box-item-img{
-    width: 20rem;
+    min-width: 10rem;
+    max-width: 10rem;
+    height: 100%;
     cursor: pointer;
+    margin: 1rem;
 }
 
 .checkoutDetail-box-item-img img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: fill;
 }
 
 .checkoutDetail-box-item-des{
@@ -221,8 +226,10 @@
    color: white;
     border: none;
     font-weight: 600;
-    font-size: 18px;
-    padding: 0.5rem 5rem;
+    font-size: 17px;
+    padding: 0.5rem 4rem;
+    font-family: cursive;
+    border-radius: 20px;
 }
 
 
@@ -260,6 +267,13 @@
         min-width: 95%;
         margin-left: 2%;
     }
+
+    .checkoutDetail-box-total-detail-btn button{
+         font-weight: 600;
+         font-size: 16px;
+         padding: 0.5rem 3rem;
+         
+    }
 }
 
 
@@ -273,7 +287,7 @@
     display: none;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
   }
   
   .chekout-page-component.active {

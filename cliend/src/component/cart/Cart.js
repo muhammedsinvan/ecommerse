@@ -93,10 +93,8 @@ const Cart = () => {
                     <p className='cart-box-item-des-title'>{item?.itemname}</p>
                     <p className='cart-box-item-des-price'>₹{item?.price}</p>
                     <div className='cart-box-item-des-qty'>
-<button className='cart-box-item-des-qty-ri'  value={item?.itemid} onClick={e=>lessqty(e.target.value)}>-</button>
-{/* <RemoveIcon className='cart-box-item-des-qty-ri'/>  */}
-<h6>{item?.qty}</h6>
-{/* <AddIcon  className='cart-box-item-des-qty-ai'/>  */}
+<button className='cart-box-item-des-qty-ri'  value={item?.itemid} onClick={e=>lessqty(e.target.value)}>-</button> 
+<h6 >{item?.qty}</h6>
 <button className='cart-box-item-des-qty-ai'  value={item?.itemid} onClick={e=>addqty(e.target.value)}>+</button>
                     </div>
                 </div>
