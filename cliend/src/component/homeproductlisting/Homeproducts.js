@@ -11,8 +11,10 @@ const Homeproducts = () => {
   const messagesEndRef = useRef();
 
   const [refresh,setRefresh] = useState(false)
-
   const [error,setError] = useState(false)
+  const [addCardLoading,setAddCartLoading] =useState(false)
+  const [proid,setProid] = useState('')
+
 
   const user = localStorage.getItem('userid')
 
@@ -37,6 +39,7 @@ const Homeproducts = () => {
         try{
           if(user){
             let res = await axios.get(`/api/getcartitem/${user}`,config)
+            
             setCartdata(res.data.cartitem)
           }else{
             setCartdata()
@@ -65,8 +68,13 @@ useEffect(() => {
    
     try{
       if(user){
+        setProid(productid)
+        setAddCartLoading(true)
         let res = await axios.post(`/api/addtocart/${user}/${qty}`,{productid});
+        setAddCartLoading(false)
+        setProid('')
         setRefresh(!refresh)
+
       }else{
         alert();
       }
@@ -115,7 +123,8 @@ useEffect(() => {
           <div className='homeproducts-text-box-btn'>
            {cartdata&&cartdata.some(cartitem => cartitem.itemid==item._id)?
           <button className='homeproducts-text-box-gotocrtbtn'  value={item._id}  onClick={gotocart} >Go To Cart</button>: 
-                <button className='homeproducts-text-box-crtbtn'  value={item._id}  onClick={e=>addtocart(e.target.value)} >Add To Cart</button>  }
+          <>
+               {addCardLoading && proid == item._id ? <button className='homeproducts-text-box-crtbtn'  >Adding ...</button> : <button className='homeproducts-text-box-crtbtn'  value={item._id}  onClick={e=>addtocart(e.target.value)} >Add To Cart</button>} </> }
                
        
         
