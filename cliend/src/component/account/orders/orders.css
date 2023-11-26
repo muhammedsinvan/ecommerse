@@ -43,7 +43,7 @@
 }
 
 .orders-product_name{
-    font-family: cursive;
+    font-family: fantasy;
     font-size: 17px;
     width: 9rem;
 }
@@ -104,5 +104,8 @@
         min-height: 7rem;
         border: 4px double #cac6c6;
         margin: 0.5rem 0rem;
+    }
+    .orders-product_price{
+        display: none;
     }
 }
