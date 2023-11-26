@@ -23,7 +23,7 @@
     width: 100%;
     min-height: 7rem;
     border: 4px double #cac6c6;
-    font-family: cursive;
+    font-family: fantasy;
 
 }
 
@@ -69,7 +69,7 @@
 }
 
 .orderdetails-product_name{
-    font-family: cursive;
+    font-family: fantasy;
     font-size: 17px;
 }
 

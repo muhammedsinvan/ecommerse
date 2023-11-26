@@ -74,7 +74,7 @@ const Cart = () => {
     <div className='cart-container'>
 
         <div className='cart-title'>
-            <h1>MY BAG</h1>
+            <h1>SHOPPING CART</h1>
         </div>  
        
       { cartdata.cartitem && grandtotal !== 0?  

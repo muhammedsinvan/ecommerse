@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./CheckoutDetail.css";
 import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
@@ -20,6 +20,7 @@ const CheckoutDetail = () => {
 
   const navigate = useNavigate();
   const params = useParams();
+  const messagesEndRef = useRef();
 
   const userid = localStorage.getItem("userid");
   const userInfo = localStorage.getItem('usertoken')
@@ -61,6 +62,15 @@ const CheckoutDetail = () => {
     }
   },cartdata)
 
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
+  }
+  
+  
+  useEffect(() => {
+    scrollToBottom()
+  }, [error]);
+
   return (
     <div className="checkoutDetail-container">
 
@@ -84,11 +94,11 @@ const CheckoutDetail = () => {
             
           </div>
         </div>:<>
-     {  error ? <div className="checkoutDetail-address-oneaddress">
+     {  error ? <div  className="checkoutDetail-address-oneaddress">
         <div className="checkoutDetail-address-selectbtn" onClick={()=>navigate('/shipping')}>
         <button>Select Your Address</button>
         </div>
-      </div> :<div className="checkoutDetail-address-oneaddress-error">
+      </div> :<div  ref={messagesEndRef} className="checkoutDetail-address-oneaddress-error">
         <div className="checkoutDetail-address-selectbtn" onClick={()=>navigate('/shipping')}>
         <button>Select Your Addres</button>
         </div>
