@@ -31,6 +31,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .Footer-CenterContainer{
@@ -53,6 +54,7 @@
 .Footer-ListItem{
     width: 50%;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .Footer-RightContainer{

@@ -46,6 +46,7 @@
     font-size: 30px;
     font-weight: 800;
     margin-left: 1rem;
+    text-transform: uppercase;
 }
 
 .productdetail-desc-container-price{

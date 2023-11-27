@@ -108,16 +108,8 @@ const getallproduct = async (req, res) => {
 };
 
 const deleteproduct = async (req, res) => {
-  let data = await product.findById(req.params.id);
-  if (data) {
-    await cloudinary.uploader.destroy(data.image1);
-    await cloudinary.uploader.destroy(data.image2);
-    await cloudinary.uploader.destroy(data.image3);
-    await cloudinary.uploader.destroy(data.image4);
-  }
-
   try {
-    await data.remove();
+    let data = await product.findByIdAndDelete(req.params.id);
     res.status(200).json("product deleted successfully");
   } catch (error) {
     res.status(500);
@@ -218,17 +210,8 @@ const getcatagory = async (req, res) => {
 
 const deletecatagory = async (req, res) => {
   try {
-    console.log(req.params.id)
-    const response = await cloudinary.uploader.destroy(data.image, {
-      invalidate: true,
-    });
-    console.log(response)
-    if (response.result) {
-      await data.remove();
+    const data = await catagory.findByIdAndDelete(req.params.id)
       res.status(200).json("catagory deleted successfully");
-    } else {
-      res.status(404).json(response.result);
-    }
   } catch (error) {
     res.status(500);
     res.json(error);
@@ -305,16 +288,8 @@ const getallbanner = async (req, res) => {
 
 const deletebaner = async (req, res) => {
   try {
-    let data = await banner.findById(req.params.id);
-    const response = await cloudinary.uploader.destroy(data.image, {
-      invalidate: true,
-    });
-    if (response.result) {
-      await data.remove();
+    let data = await banner.findByIdAndDelete(req.params.id);
       res.status(200).json("Banner deleted successfully");
-    } else {
-      res.status(404).json(response.result);
-    }
   } catch (error) {
     res.status(500);
     res.json(error);

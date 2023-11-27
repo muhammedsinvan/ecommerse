@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import './cart.css'
 import axios from 'axios';
 import EmptyCart from './EmptyCart';
+import { Alert } from '@mui/material';
 
 const Cart = () => {
 
     const [cartdata,setCartdata] = useState([])
-    console.log(cartdata)
     const [refresh,setRefresh] = useState(false)
     const [grandtotal,setGrandtotal] = useState();
+    const [sucess,setSuccess] =useState(false)
 
     const navigate = useNavigate();
 
@@ -38,9 +39,14 @@ const Cart = () => {
  
     const removeitem = async (itemid)=>{
         try{
+       
             let res = await axios.post(`/api/removecartitem/${userid}`,{itemid})
             console.log(res)
+            setSuccess(true)
             setRefresh(!refresh)
+            setTimeout(() => {
+                setSuccess(false)
+            }, 2000);
         }catch(error){
             console.log(error)
         }
@@ -58,7 +64,6 @@ const Cart = () => {
     
     const lessqty = async(itemid)=>{
         try{
-            console.log("heyond")
             let res = await axios.post(`/api/lesscartqty/${userid}`,{itemid})
             setRefresh(!refresh)
             console.log(res)
@@ -76,7 +81,7 @@ const Cart = () => {
         <div className='cart-title'>
             <h1>SHOPPING CART</h1>
         </div>  
-       
+       { sucess?<Alert className='success-alert' severity="success">Cart item has removed </Alert> : <></>}
       { cartdata.cartitem && grandtotal !== 0?  
        <div className='cart-box'>
 

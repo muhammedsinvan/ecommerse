@@ -1,8 +1,8 @@
 .Categories-Container{
     display: flex;
     padding: 20px;
-    justify-content: space-between;
     overflow-x: scroll;
+    justify-content: space-between;
 }
 
 .Categories-Container::-webkit-scrollbar {

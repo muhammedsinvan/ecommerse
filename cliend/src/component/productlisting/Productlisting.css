@@ -20,9 +20,9 @@
 
 .products-banner{
     display: flex;
-   margin: 0% 0% 4% 5%;
+    margin: 0% 0% 4% 5%;
     width: 90%;
-    height:35vh ;
+    height:20rem ;
     position: relative;
 }
 

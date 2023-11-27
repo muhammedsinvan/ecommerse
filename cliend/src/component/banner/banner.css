@@ -1,11 +1,10 @@
 .banner-container{
-    margin: 1rem;
-        /* margin-top: 8rem; */
-        
+    margin: 1rem; 
 }
+
 .banner-image{
     width: 100vw;
-    height: 50vh;
+    height: 30rem;
     
 }
 

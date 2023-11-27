@@ -2,7 +2,7 @@ import React from 'react'
 import './Catagoriesitem.css'
 import {useNavigate} from 'react-router-dom'
 
-const Catagoriesitem = ({item}) => {
+const Catagoriesitem = ({item}) => {  
 
   const navigate = useNavigate()
 
@@ -12,7 +12,7 @@ const Catagoriesitem = ({item}) => {
  
   return (
     
-    <div className='CatagerisItem-MainContainer'  onClick={()=>navigate(`/products/${item.name}`)} > 
+    <div className='CatagerisItem-MainContainer'  onClick={()=>navigate(`/products/${item.name}`)} >   
       < img className='CatagerisItem-Image' src={item.image} alt="categories"  />
       <div className='CatagerisItem-Info'>
         <text className='CatagerisItem-Title'>{item.name}</text>
@@ -21,6 +21,6 @@ const Catagoriesitem = ({item}) => {
 
     </div> 
   ) 
-} 
+}  
 
 export default Catagoriesitem

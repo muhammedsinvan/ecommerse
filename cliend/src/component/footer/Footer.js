@@ -1,8 +1,12 @@
 import React from 'react'
 import './footer.css'
-import {Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter} from '@material-ui/icons'
+import {Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter} from '@material-ui/icons';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+
+    const navigate = useNavigate();
+
   return (
     <div className='Footer-Container'>
     <div className='Footer-LeftContainer'>
@@ -27,13 +31,13 @@ const Footer = () => {
     <div className='Footer-CenterContainer'>
         <h3 className='Footer-Title'>Useful List</h3>
         <ul className='Footer-List'>
-<li className='Footer-ListItem'>Home</li>
-<li className='Footer-ListItem'>Cart</li>
+<li className='Footer-ListItem' onClick={()=>navigate('/')}>Home</li>
+<li className='Footer-ListItem' onClick={()=>navigate('/cart')}>Cart</li>
 <li className='Footer-ListItem'>Men Fashion</li>
 <li className='Footer-ListItem'>Women Fashion</li>
 <li className='Footer-ListItem'>Accessories</li>
-<li className='Footer-ListItem'>My Account</li>
-<li className='Footer-ListItem'>Orders</li>
+<li className='Footer-ListItem' onClick={()=>navigate('/accounts/profile')}>My Account</li>
+<li className='Footer-ListItem' onClick={()=>navigate('/accounts/orders')}>Orders</li>
 <li className='Footer-ListItem'>Whislist</li>
 <li className='Footer-ListItem'>Whislist</li>
 <li className='Footer-ListItem'>Terms</li>
