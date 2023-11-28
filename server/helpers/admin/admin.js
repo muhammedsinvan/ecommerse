@@ -210,9 +210,8 @@ const getcatagory = async (req, res) => {
 
 const deletecatagory = async (req, res) => {
   try {
-    console.log('one')
-   await catagory.findByIdAndDelete(req.params.id)
-    console.log('data')
+    console.log(req.params.id)
+   await catagory.findByIdAndDelete({_id:req.params.id})
       res.status(200).json("catagory deleted successfully");
   } catch (error) {
     res.status(500);
