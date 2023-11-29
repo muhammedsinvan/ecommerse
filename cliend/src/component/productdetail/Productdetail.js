@@ -142,11 +142,13 @@
           <p className='productdetail-desc-container-retailprice'>₹ {detail?.retailprice}</p>
           {/* <p className='productdetail-desc-container-discountprice'>${detail.discountprice}</p> */}
           </div>
-        <p className='productdetail-desc-container-text' >{detail?.detail}</p>
+        
           <ul className='productdetail-desc-container-points'>
             <li>{detail?.pointone}</li>
             <li>{detail?.pointtwo}</li>
           </ul>
+        <p className='productdetail-desc-container-text' >{detail?.detail}</p>
+          
           <div className='productdetail-desc-container-button'>
             {cartdata&&cartdata.some(cartitem=>cartitem?.itemid==detail?._id)?
             <button className='productdetail-desc-container-buynow' value={detail?._id} onClick={gotocart} >BUY NOW</button>:

@@ -192,7 +192,7 @@ const getsortedproduct = async (req, res) => {
     let recentuplodedproduct = await product
       .find({})
       .sort({ _id: -1 })
-      .limit(8);
+      .limit(12);
     res.json(recentuplodedproduct);
   } catch (error) {
     res.status(500);
@@ -292,7 +292,7 @@ const editshippingaddress = async (req, res) => {
 const getshippingaddress = async (req, res) => {
   const userid = req.params.userid;
   try {
-    let useraddress = await user.findOne({ _id: userid }).sort({_id:-1});
+    let useraddress = await user.findOne({ _id: userid }).sort({ _id: -1 });
     res.json(useraddress.address);
   } catch (error) {
     res.status(500).json(error);
@@ -417,7 +417,7 @@ const checktoken =(req,res)=>{
 const getorders =async(req,res)=>{
   const userid = req.params.userid;
   try{
-    let orders = await order.find({userid})
+    let orders = await order.find({userid}).sort({ _id: -1 })
     console.log(orders)
     res.json(orders)
   }catch(error){

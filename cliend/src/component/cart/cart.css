@@ -39,13 +39,15 @@
     display: flex;
     border: 1px solid rgb(192, 191, 191);
     margin-top: 1.5%;
-    height: 10rem;
+    height: fit-content;
 }
 
 .cart-box-item-img{
-    min-width: 13rem;
+    width: 20rem;
+    height: 9rem;
     cursor: pointer;
     margin: 0.5rem;
+    
 }
 
 .cart-box-item-img img{
@@ -63,7 +65,8 @@
     margin: 1% 4%;
 }
 
-.cart-box-item-des-title{
+
+.cart-box-item-des-title p{
     width: 100%;
     font-size: 20px;
     font-weight: 500;
@@ -219,6 +222,10 @@
 }
 
 @media screen and (max-width:500px) {
+    .cart-box-item-des-title{
+        height: 4rem;
+        overflow: hidden;
+    }       
     .cart-box-item-img{
         min-width: 9rem;
     }

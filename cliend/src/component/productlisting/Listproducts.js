@@ -113,7 +113,9 @@ useEffect(()=>{
         <img className='products-img' src={item.image1} alt='img' onClick={e=> getproductdetail(item._id)}  />
         </div>
         <div className='products-text-box'>
-          <h2 className='products-text-box-title'>{item.name}</h2>
+          <div className='products-text-box-title'>
+          <p>{item.name}</p>
+            </div>
           <div className='products-text-box-price'>
           <h3 className='products-text-box-retialprice'>₹ {item.retailprice}</h3>
            {/* <h3 className='products-text-box-discountprice'>{item.discountprice}</h3> */}

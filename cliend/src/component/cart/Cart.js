@@ -95,7 +95,10 @@ const Cart = () => {
                     <img src={item?.image} alt='img'/>
                 </div>
                 <div className='cart-box-item-des'>
-                    <p className='cart-box-item-des-title'>{item?.itemname}</p>
+                    <div className='cart-box-item-des-title'>
+                    <p >{item?.itemname}</p>
+                    </div>
+
                     <p className='cart-box-item-des-price'>₹{item?.price}</p>
                     <div className='cart-box-item-des-qty'>
 <button className='cart-box-item-des-qty-ri'  value={item?.itemid} onClick={e=>lessqty(e.target.value)}>-</button> 

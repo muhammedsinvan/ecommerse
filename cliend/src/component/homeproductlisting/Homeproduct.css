@@ -56,10 +56,9 @@
     display: flex;
 }
 
-.homeproducts-text-box-title,  .homeproducts-text-box-discountprice{
+.homeproducts-text-box-title p,  .homeproducts-text-box-discountprice{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 1em;
   text-transform: uppercase;
   margin: 0.2em auto;
   width: 100%;
@@ -81,9 +80,13 @@
     color: rgb(17, 16, 16);
 }
 
-
 .homeproducts-text-box-title{
-    font-size: 1.2em;
+    max-height: 5rem;
+    overflow: hidden;
+}
+
+.homeproducts-text-box-title p{
+    font-size: 1rem;
 }
 
 .homeproducts-text-box-discountprice{

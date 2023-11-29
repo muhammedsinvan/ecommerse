@@ -1,5 +1,6 @@
 .productdetail-container{
     display: flex;
+    margin: 0rem 5rem;
 }
 
 .productdetail-image-container{
@@ -15,7 +16,7 @@
 }
 
 .productdetail-image-container-list img{
-    width: 100%;
+    width: 70%;
     height: 15vh;
     margin: 0.5rem 1rem;
     cursor: pointer;
@@ -120,8 +121,16 @@
     }
 }
 
+@media screen and (max-width:800px) {
+    .productdetail-container{
+        margin: 0rem;
+    }
+}
+
 @media screen and (max-width:520px) {
- 
+    .productdetail-container{
+        margin: 0rem;
+    }
 
     .productdetail-desc-container-buynow,
 .productdetail-desc-container-addcart{
