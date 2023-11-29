@@ -31,9 +31,8 @@ const Showcatagorymng = () => {
 
   const deletecatagory =async(id)=>{
     try{
-      let res = await axios.post(`/api/admin/deletecatagory/${id}`)
+      let res = await axios.post(`/api/admin/deletecatagory/${id}`);
       setRefresh(!refresh)
-      console.log(res)
     }catch(error){
       console.log(error) 
     }
@@ -46,7 +45,7 @@ const Showcatagorymng = () => {
   return (
     <div className='showcatagory-container'>
     <div className='showcatagory-box'>
-      <div className='showcatagory-addproduct-btn' onClick={()=>navigate("/admin/addcatagory")}>
+      <div className='showcatagory-addproduct-btn' onClick={()=>navigate("/admin/addcatagory")}> 
         <button>Add Catagory</button>
       </div>
       <h1 className='showcatagory-title'>CATAGORY</h1>
@@ -55,15 +54,15 @@ const Showcatagorymng = () => {
 <table className='showcatagory-table'>
 <tr>
   <th>Image</th>
+  <th>Catagory Banner</th>
   <th>Catagory Name</th>
-  <th>Catagory Button</th>
   <th>Action</th>
 </tr>
 {data.map((item)=>(
   <tr>
   <td className='showcatagory-img-container'><img className='showcatagory-img' src={item.image} alt="img" /></td>
+  <td className='showcatagory-img-container'><img className='showcatagory-img' src={item.catbanner} alt="img" /></td>
   <td>{item.name}</td>
-  <td>{item.button}</td>
   <td>
     <button value={item._id} onClick={ e => editcatagory(e.target.value)}>Edit</button>
     <button value={item._id} onClick={ e => deletecatagory(e.target.value)}>Delete</button>

@@ -134,7 +134,7 @@ const Addbannermng = () => {
 
         <div className='addbanner-box-data'>
             <text>Image 1</text>
-            {params.id ? <img className='addbanner-img' src={image} alt="image" /> : <></>}
+            {baseImage ? <img className='addbanner-img' src={baseImage} alt="image" /> : <img className='addbanner-img' src={image} alt="image" />}
             <input type='file' onChange={(e)=> {uploadImage(e)}}/>
         </div>
 

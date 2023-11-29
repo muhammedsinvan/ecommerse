@@ -24,7 +24,7 @@ const Productlisting = () => {
   return (
     <div className='products-container'>
        <div className='products-banner'> 
-       <img className='products-banner-img' src={data?.image} alt='bannerimg'/>
+       <img className='products-banner-img' src={data?.catbanner} alt='bannerimg'/>
        <text className='products-banner-text'>{data?.name}</text>
         </div>
 

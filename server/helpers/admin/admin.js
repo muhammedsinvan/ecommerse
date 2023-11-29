@@ -181,13 +181,14 @@ const productdata = async (req, res) => {
 };
 
 const addcatagory = async (req, res) => {
-  const { name, button, image } = req.body;
-  const response = await cloudinary.uploader.upload(image);
+  const { name, image,catbanner } = req.body;
+  const response1 = await cloudinary.uploader.upload(image);
+  const response2= await cloudinary.uploader.upload(catbanner)
   try {
     const newcatagory = new catagory({
       name,
-      button,
-      image: response.secure_url,
+      image: response1.secure_url,
+      catbanner: response2.secure_url
     });
 
     const catagoryadded = await newcatagory.save();
@@ -230,23 +231,38 @@ const catagorydata = async (req, res) => {
 };
 
 const updatecatagory = async (req, res) => {
-  const { name, button, image } = req.body;
+  const { name, image,catbanner } = req.body;
   const user = req.params.id;
   console.log(req.body.image);
 
   try {
-    if (req.body.image.length > 0) {
+    if (req.body.image.length > 0 && req.body.catbanner.length >0) {
+      const response1 = await cloudinary.uploader.upload(image);
+      const response2 = await cloudinary.uploader.upload(catbanner);
+      const updatedcatagory = await catagory.findByIdAndUpdate(user, {
+        name,
+        image: response1.secure_url,
+        catbanner: response2.secure_url
+      });
+      res.json(updatedcatagory);
+    }else if(req.body.catbanner.length >0){
+      const response = await cloudinary.uploader.upload(catbanner);
+      const updatedcatagory = await catagory.findByIdAndUpdate(user, {
+        name,
+        catbanner: response.secure_url,
+      });
+      res.json(updatedcatagory);
+    }else if (req.body.image.length >0 ){
       const response = await cloudinary.uploader.upload(image);
       const updatedcatagory = await catagory.findByIdAndUpdate(user, {
         name,
-        button,
         image: response.secure_url,
       });
       res.json(updatedcatagory);
-    } else {
+    }
+     else {
       const updatedcatagory = await catagory.findByIdAndUpdate(user, {
         name,
-        button,
       });
       res.json(updatedcatagory);
     }

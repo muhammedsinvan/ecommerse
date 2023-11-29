@@ -7,17 +7,24 @@ import './catagorymng.css'
 const Addcatagorymng = () => {
 
     const [catagoryName,setCatagoryName] = useState()
-    const [catagoryButton,setCatagoryButton] = useState()
     const [image,setImage] = useState()
+    const [catbanner,setCatbanner] = useState()
     const [baseImage1, setBaseImage1] = useState("");
+    const [baseImage2, setBaseImage2] = useState("");
 
     const navigate = useNavigate();
     const params = useParams();
 
-    const uploadImage = async (e) => {
+    const uploadImage1 = async (e) => {
         const file = e.target.files[0];
         const base64 = await convertBase64(file);
         setBaseImage1(base64);
+      };
+
+      const uploadImage2 = async (e) => {
+        const file = e.target.files[0];
+        const base64 = await convertBase64(file);
+        setBaseImage2(base64);
       };
       
 
@@ -39,8 +46,8 @@ const Addcatagorymng = () => {
         try{
             const newcatagory = {
                 name:catagoryName,
-                button:catagoryButton,
-                image:baseImage1
+                image:baseImage1,
+                catbanner:baseImage2
             }
 
             let res = await axios.post('/api/admin/addcatagory',newcatagory)
@@ -56,8 +63,8 @@ const Addcatagorymng = () => {
         try{
           const newcatagory = {
             name:catagoryName,
-            button:catagoryButton,
-            image:baseImage1
+            image:baseImage1,
+            catbanner:baseImage2
         }
 
         let res = await axios.post(`/api/admin/updatecatagory/${params.id}`,newcatagory)
@@ -75,8 +82,8 @@ const Addcatagorymng = () => {
             try{
               let res = await axios.get(`/api/admin/catagorydata/${params.id}`)
               setCatagoryName(res.data.name)
-              setCatagoryButton(res.data.button)
               setImage(res.data.image)
+              setCatbanner(res.data.catbanner)
             }catch(error){
               console.log(error)
             }
@@ -105,15 +112,16 @@ const Addcatagorymng = () => {
             <text>Catagory Name</text>
             <input value={catagoryName} onChange={(e)=>setCatagoryName(e.target.value)} />
         </div>
-        <div className='addcatagory-box-data'>
-            <text>Button Name</text>
-            <input value={catagoryButton} onChange={(e)=>setCatagoryButton(e.target.value)} />
-        </div>
 
         <div className='addcatagory-box-data'>
-            <text>Image 1</text>
-            {params.id?<img className='addcatagory-img' src={image} alt='image' /> : <></>}
-            <input type='file' onChange={(e)=>{uploadImage(e)}} />
+            <text>Image</text>
+            {baseImage1?<img className='addcatagory-img' src={baseImage1} alt='image' /> : <img className='addcatagory-img' src={image} alt='image' />}
+            <input type='file' onChange={(e)=>{uploadImage1(e)}} />
+        </div>
+        <div className='addcatagory-box-data'>
+            <text>Catagory Banner</text>
+            {baseImage2?<img className='addcatagory-img' src={baseImage2} alt='image' /> : <img className='addcatagory-img' src={catbanner} alt='image' />}
+            <input type='file' onChange={(e)=>{uploadImage2(e)}} />
         </div>
 
         <div className='addcatagory-box-button'>
