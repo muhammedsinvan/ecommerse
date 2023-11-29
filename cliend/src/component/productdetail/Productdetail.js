@@ -2,6 +2,7 @@
   import './productdetail.css'
   import { useNavigate, useParams } from 'react-router-dom';
   import axios from 'axios';
+  import ProductNotFound from './productNotFound';
 
   const Productdetail = () => {
 
@@ -37,14 +38,14 @@
       (async()=>{
         try{
           let res = await axios.get(`/api/getproductdetail/${params.id}`);
-          setDetail(res.data)
-          setViewimage(res.data.image1)
+          
+            setDetail(res.data)
+            setViewimage(res.data.image1)
         }catch(error){
           console.log(error)
         }
       })()
     },[])
-
     useEffect(()=>{
       (async()=>{
           try{
@@ -99,6 +100,8 @@
 
     return (
       <>
+     
+     {detail ? <>
       {error&&
         <div ref={messagesEndRef} className='products-box-error-detail'>
         <p>Please make login</p>
@@ -109,10 +112,10 @@
         {/* web view */}
         <div className='productdetail-image-container'>
           <div className='productdetail-image-container-list'>
-  <img onClick={e => setViewimage(e.target.src)} src={detail.image1} alt='img1'/>
-  <img onClick={e => setViewimage(e.target.src)} src={detail.image2}  alt='img2'/>
-  <img onClick={e => setViewimage(e.target.src)} src={detail.image3}  alt='img3'/>
-  <img onClick={e => setViewimage(e.target.src)} src={detail.image4}  alt='img4'/>
+  <img onClick={e => setViewimage(e.target.src)} src={detail?.image1} alt='img1'/>
+  <img onClick={e => setViewimage(e.target.src)} src={detail?.image2}  alt='img2'/>
+  <img onClick={e => setViewimage(e.target.src)} src={detail?.image3}  alt='img3'/>
+  <img onClick={e => setViewimage(e.target.src)} src={detail?.image4}  alt='img4'/>
           </div>
           <div className='productdetail-image-container-view'>
   <img src={viewimage}  alt='viewimg'/>
@@ -126,35 +129,38 @@
   <img src={viewimage}  alt='viewimg'/>
           </div>
           <div className='productdetail-image-container-list-mb'>
-  <img onClick={e => setViewimage(e.target.src)} src={detail.image1} alt='img1'/>
-  <img   onClick={e => setViewimage(e.target.src)} src={detail.image2}  alt='img2'/>
-  <img onClick={e => setViewimage(e.target.src)} src={detail.image3}  alt='img3'/>
-  <img onClick={e => setViewimage(e.target.src)} src={detail.image4}  alt='img4'/>
+  <img onClick={e => setViewimage(e.target.src)} src={detail?.image1} alt='img1'/>
+  <img   onClick={e => setViewimage(e.target.src)} src={detail?.image2}  alt='img2'/>
+  <img onClick={e => setViewimage(e.target.src)} src={detail?.image3}  alt='img3'/>
+  <img onClick={e => setViewimage(e.target.src)} src={detail?.image4}  alt='img4'/>
           </div>
 
         </div>
         <div className='productdetail-desc-container'>
-          <p className='productdetail-desc-container-title'>{detail.name}</p>
+          <p className='productdetail-desc-container-title'>{detail?.name}</p>
           <div className='productdetail-desc-container-price'>
-          <p className='productdetail-desc-container-retailprice'>₹ {detail.retailprice}</p>
+          <p className='productdetail-desc-container-retailprice'>₹ {detail?.retailprice}</p>
           {/* <p className='productdetail-desc-container-discountprice'>${detail.discountprice}</p> */}
           </div>
-        <p className='productdetail-desc-container-text' >{detail.detail}</p>
+        <p className='productdetail-desc-container-text' >{detail?.detail}</p>
           <ul className='productdetail-desc-container-points'>
-            <li>{detail.pointone}</li>
-            <li>{detail.pointtwo}</li>
+            <li>{detail?.pointone}</li>
+            <li>{detail?.pointtwo}</li>
           </ul>
           <div className='productdetail-desc-container-button'>
             {cartdata&&cartdata.some(cartitem=>cartitem?.itemid==detail?._id)?
-            <button className='productdetail-desc-container-buynow' value={detail._id} onClick={gotocart} >BUY NOW</button>:
-            <button className='productdetail-desc-container-buynow' value={detail._id} onClick={e=>addtocart(e.target.value,'buy')}>BUY NOW</button>}
+            <button className='productdetail-desc-container-buynow' value={detail?._id} onClick={gotocart} >BUY NOW</button>:
+            <button className='productdetail-desc-container-buynow' value={detail?._id} onClick={e=>addtocart(e.target.value,'buy')}>BUY NOW</button>}
             {cartdata&&cartdata.some(cartitem=>cartitem?.itemid==detail?._id)? 
-            <button className='productdetail-desc-container-addcart'value={detail._id} onClick={gotocart}>GO TO CART</button>:
-            <button className='productdetail-desc-container-addcart'value={detail._id} onClick={e=>addtocart(e.target.value,'cart')}>ADD TO CART</button>}
+            <button className='productdetail-desc-container-addcart'value={detail?._id} onClick={gotocart}>GO TO CART</button>:
+            <button className='productdetail-desc-container-addcart'value={detail?._id} onClick={e=>addtocart(e.target.value,'cart')}>ADD TO CART</button>}
 
           </div>
         </div>
       </div>
+      </> : 
+      <ProductNotFound />
+      }
       </>
     )
   }
