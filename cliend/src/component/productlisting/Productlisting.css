@@ -22,7 +22,7 @@
     display: flex;
     margin: 0% 0% 4% 5%;
     width: 90%;
-    height:20rem ;
+    height:30rem ;
     position: relative;
 }
 
@@ -38,6 +38,7 @@
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
     color: white;
+    text-transform: uppercase;
 }
 
 
@@ -49,13 +50,14 @@
 
 .products-box-container{
     display: flex;
+    justify-content: center;
     /* flex-wrap: wrap; */
     flex-flow: wrap;
 }
 
 .products-box{
     box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
-    width: 21%;
+    width: 18%;
     min-height: 43vh;
     margin: 1% 2%;
     border-radius: .25rem;
@@ -130,6 +132,7 @@
 .products-text-box-title{
     height: 5rem;
     overflow: hidden;
+    
 }
 
 .products-text-box-title p{

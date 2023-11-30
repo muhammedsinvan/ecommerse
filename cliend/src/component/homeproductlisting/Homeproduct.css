@@ -2,11 +2,12 @@
     display: flex;
     /* flex-wrap: wrap; */
     flex-flow: wrap;
+    justify-content: center;
 }
 
 .homeproducts-box{
     box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
-    width: 21%;
+    width: 18%;
     min-height: 43vh;
     margin: 1% 2%;
     border-radius: .25rem;
@@ -38,6 +39,7 @@
     -ms-transition: all 1s ease;
     -webkit-transition: all 1s ease;
     -o-transition: all 1s ease;
+    cursor: pointer;
 }
 
 .homeproducts-img:hover {
@@ -73,7 +75,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1em;
-    text-transform: uppercase;
+    text-transform: uppesrcase;
     margin: 0.2em auto;
     width: 100%;
     text-align: center;
@@ -81,9 +83,10 @@
 }
 
 .homeproducts-text-box-title{
-    max-height: 5rem;
+    height: 4.5rem;
     overflow: hidden;
 }
+
 
 .homeproducts-text-box-title p{
     font-size: 1rem;

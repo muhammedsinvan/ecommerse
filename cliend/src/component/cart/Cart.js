@@ -96,7 +96,7 @@ const Cart = () => {
                 </div>
                 <div className='cart-box-item-des'>
                     <div className='cart-box-item-des-title'>
-                    <p >{item?.itemname}</p>
+                        <p >{item.itemname}</p>
                     </div>
 
                     <p className='cart-box-item-des-price'>₹{item?.price}</p>

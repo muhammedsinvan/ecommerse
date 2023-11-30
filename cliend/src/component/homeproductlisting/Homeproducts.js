@@ -116,7 +116,8 @@ useEffect(() => {
         </div>
         <div className='homeproducts-text-box'>
           <div className='homeproducts-text-box-title'>
-          <p >{item.name} </p>
+         <p >{item.name}</p>
+          
           </div>
           
           <div className='homeproducts-text-box-price'>

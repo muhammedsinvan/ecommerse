@@ -66,6 +66,8 @@
 }
 
 
+
+
 .cart-box-item-des-title p{
     width: 100%;
     font-size: 20px;
@@ -183,6 +185,10 @@
 }
 
 @media screen and (max-width:700px) {
+    .cart-box-item-des-title{
+        height: 4rem;
+        overflow: hidden;
+    }     
     .cart-box-item-list{
         margin: 0% 2%;
     }
@@ -221,11 +227,11 @@
     }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:500px) {  
     .cart-box-item-des-title{
         height: 4rem;
         overflow: hidden;
-    }       
+    }     
     .cart-box-item-img{
         min-width: 9rem;
     }
