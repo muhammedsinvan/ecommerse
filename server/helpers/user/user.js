@@ -454,7 +454,7 @@ if(response){
     from: "verdeelifeshop@gmail.com",
     to: response.email,
     subject: "Reset your password",
-    html: <strong>Forget Password</strong>,
+    html: "<strong>Forget Password</strong>",
     text: `https://verdeelife.store/forgotpassword/newpassword/${response._id}/${token}`,
   };
   transporter.sendMail(mailOptions, function (error, info) {
