@@ -157,6 +157,8 @@
     width: 100%;
     font-size: 20px;
     font-weight: 500;
+    height: 4rem;
+    overflow: hidden;
 }
 
 .checkoutDetail-box-item-des-price{

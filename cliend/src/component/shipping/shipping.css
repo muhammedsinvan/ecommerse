@@ -84,7 +84,7 @@
 
 .shipping-left-container-title{
     font-size: 22px;
-    font-family: cursive;
+    font-family: fantasy;
 }
 
 .shipping-left-container-field{
@@ -131,7 +131,7 @@
     background-color: rgb(80, 202, 80);
     border: none;
     padding: 0.5rem 8rem;
-    font-family: cursive;
+    font-family: fantasy;
     border-radius: 20px;
 }
 

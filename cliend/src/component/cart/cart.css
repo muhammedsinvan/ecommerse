@@ -119,6 +119,7 @@
     color: rgb(255, 255, 255);
     background-color: rgb(67, 155, 89);
     padding: 0.1rem 1rem;
+    border-radius: 10px;
 }
 
 .cart-box-total{
@@ -238,5 +239,18 @@
 
     .cart-box-item-img img{
         object-fit: contain;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .cart-box{
+        width: fit-content;
+    }
+
+    .cart-title{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        height: fit-content;
     }
 }
