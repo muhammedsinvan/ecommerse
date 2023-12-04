@@ -104,7 +104,7 @@ const Cart = () => {
 <button className='cart-box-item-des-qty-ri'  value={item?.itemid} onClick={e=>lessqty(e.target.value)}>-</button> 
 <h6 >{item?.qty}</h6>
 <button className='cart-box-item-des-qty-ai'  value={item?.itemid} onClick={e=>addqty(e.target.value)}>+</button>
-                    </div>
+                    </div> 
                 </div>
                 
                 <div className='cart-box-item-button'> 

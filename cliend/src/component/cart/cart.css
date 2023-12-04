@@ -227,4 +227,8 @@
     .cart-box-item-img img{
         object-fit: contain;
     }
+
+    .cart-box-item-des-title p{
+        width: 6rem;
+    }
 }
