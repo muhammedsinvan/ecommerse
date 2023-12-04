@@ -32,6 +32,7 @@ import CheckoutSuccess from "./pages/checkoutSuccess";
 import Forgetpasswordpage from "./pages/Forgetpasswordpage";
 import Newpasswordpage from "./pages/Newpasswordpage";
 import CheckoutPage from "./pages/CheckoutPage";
+import ScrollTop from "./component/ScrollTop/ScrollTop";
 
 
 

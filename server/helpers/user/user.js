@@ -366,7 +366,7 @@ const stripepayment =async(req,res)=>{
     const payment = await stripe.paymentIntents.create({
       payment_method:id,
       description:"Product purchased successful",
-      amount: newamount*100, // USD*100
+      amount: newamount, // USD*100
       currency: 'inr',
       confirm: true,
       payment_method_types: ['card'],
