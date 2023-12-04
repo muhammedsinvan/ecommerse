@@ -241,16 +241,3 @@
         object-fit: contain;
     }
 }
-
-@media screen and (max-width:400px) {
-    .cart-box{
-        width: fit-content;
-    }
-
-    .cart-title{
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-        height: fit-content;
-    }
-}
