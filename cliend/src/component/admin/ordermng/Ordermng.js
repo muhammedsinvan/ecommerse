@@ -6,10 +6,13 @@ import moment from 'moment';
 
 const Ordermng = () => {
 
+  const options = ['Confirmed','Shipped','Out For Delivery','Deliverd']
+
 
   const navigate = useNavigate();
 
   const [data,setData]= useState([])
+  const [refresh,setRefresh] = useState(true)
 
   const adminInfo = localStorage.getItem('admintoken')
 
@@ -28,12 +31,13 @@ const Ordermng = () => {
         console.log(error)
       }
     })()
-  },[])
+  },[refresh])
 
   const updatestatus =async(status,orderid)=>{
    try{
      let res = await axios.post(`/api/admin/updateorderstatus/${orderid}`,{status})
      console.log(res)
+     setRefresh(!refresh)
    }catch(error){
     console.log(error)
    }
@@ -58,7 +62,7 @@ const Ordermng = () => {
 
 {data.map ((item,index)=>(
   <tr>
-  <td>{moment(item.date.ordered).format('LL')}</td>
+  <td>{moment(item.date.confirmed).format('LL')}</td>
   <td>{item._id}</td>
   <td>{item.paymentid}</td>
   <td>{item.grandtotal}</td>
@@ -68,10 +72,11 @@ const Ordermng = () => {
     </button>
   </td>
   <td>
-  <select className='ordermng-select ' defaultValue={item.orderstatus} onChange={(e)=> updatestatus(e.target.value,item._id)}>
-    <option value="shipped">Shipped</option>
-    <option value="outdelivery">Out For Delivery</option>
-    <option value="deliverd">Deliverd</option>
+  <select  className='ordermng-select ' value={item.orderstatus} onChange={(e)=> updatestatus(e.target.value,item._id)}>
+  {options.map((optiono, index) => (<>
+          {optiono == item.orderstatus ? <option >{item.orderstatus}</option> :<option value={optiono}>{optiono}</option>}
+          </>
+        ))}
   </select>
   </td>
 </tr>

@@ -355,7 +355,7 @@ const updatebanner = async (req, res) => {
 
 const getallorder = async(req,res)=>{
     try{
-        let allorder = await order.find()
+        let allorder = await order.find().sort({ _id: -1 });
         res.json(allorder)
     }catch(error){
         res.status(500);
@@ -379,13 +379,13 @@ const updateorderstatus =async(req,res)=>{
   const {status} = req.body
 
   try{
-    if(status == "shipped"){
+    if(status == "Shipped"){
       let updatedorder = await order.findOneAndUpdate({_id:orderid},{"$set":{"date.shipped":new Date(),"orderstatus":"Shipped"}})
   res.json(updatedorder)
-    }else if(status == "outdelivery"){
+    }else if(status == "Out For Delivery"){
       let updatedorder = await order.findOneAndUpdate({_id:orderid},{"$set":{"date.outdelivery":new Date(),"orderstatus":"Out For Delivery"}})
   res.json(updatedorder)
-    }else if(status == "deliverd"){
+    }else if(status == "Deliverd"){
       let updatedorder = await order.findOneAndUpdate({_id:orderid},{"$set":{"date.deliverd":new Date(),"orderstatus":"Delivered"}})
   res.json(updatedorder)
     }
