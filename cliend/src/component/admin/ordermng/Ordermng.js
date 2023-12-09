@@ -43,7 +43,6 @@ const Ordermng = () => {
    }
   }
 
-  console.log(data)
   return (
     <div className='showorder-container'>
     <div className='showorder-box'>
@@ -73,10 +72,25 @@ const Ordermng = () => {
   </td>
   <td>
   <select  className='ordermng-select ' value={item.orderstatus} onChange={(e)=> updatestatus(e.target.value,item._id)}>
-  {options.map((optiono, index) => (<>
-          {optiono == item.orderstatus ? <option >{item.orderstatus}</option> :<option value={optiono}>{optiono}</option>}
-          </>
-        ))}
+  <option >{item.orderstatus}</option>
+  {item.orderstatus === "Confirmed" && 
+  <>
+  <option value={"Shipped"} >Shipped</option>
+  <option value={"Out For Delivery"}>Out For Delivery</option>
+  <option value={"Deliverd"}>Deliverd</option>
+  </>
+  }
+  {item.orderstatus === "Shipped" && 
+  <>
+  <option value={"Out For Delivery"}>Out For Delivery</option>
+  <option value={"Deliverd"}>Deliverd</option>
+  </>
+  }
+    {item.orderstatus === "Out For Delivery" && 
+  <>
+  <option value={"Deliverd"}>Deliverd</option>
+  </>
+  }
   </select>
   </td>
 </tr>
