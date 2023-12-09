@@ -11,6 +11,8 @@ const Showproduct = () => {
 
   const [refresh,setRefresh] = useState(true)
 
+  const [open,setOpen] = useState(false)
+
   const adminInfo = localStorage.getItem('admintoken')
 
   const config = {

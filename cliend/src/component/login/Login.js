@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './login.css'
 import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -16,8 +16,31 @@ const Login = () => {
   const[inpass,setinpass]=useState("password");
   const[tick,settick]=useState(false);
   const[errorMessage,setErrorMessage] = useState('')
+
+  const userInfo = localStorage.getItem('usertoken')
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${userInfo}`,
+    },
+  };
   
-  
+  useEffect(()=>{
+    (async()=>{
+      try{
+        let res = await axios.get('/api/checktoken',config)
+        if(res.data.success === true){
+          navigate('/')
+        }
+      }catch(error){
+        if(error.response.status == 401){
+          localStorage.removeItem('usertoken')
+          localStorage.removeItem('userid')
+        }
+      }
+    })()
+    
+  })
 
 const Eye=()=>{
    if(inpass=="password"){
