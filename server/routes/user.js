@@ -20,6 +20,7 @@ import {
   getuseraddres,
   editshippingaddress,
   stripepayment,
+  confirmorder,
   checktoken,
   getorders,
   orderdetail,
@@ -71,6 +72,8 @@ router.get("/getuseraddres/:userid/:addressid", protect, getuseraddres);
 
 router.post("/stripe/payment", stripepayment);
 
+router.post("/paymentsuccess/confirmorder",confirmorder);
+
 router.get("/checktoken", protect, checktoken);
 
 router.get("/getorders/:userid",protect,getorders)
@@ -80,5 +83,6 @@ router.get("/order/detail/:orderid",protect,orderdetail)
 router.post("/checkmail",checkmail)
 
 router.post("/newpassword/:id/:token",newpassword)
+
 
 export default router;

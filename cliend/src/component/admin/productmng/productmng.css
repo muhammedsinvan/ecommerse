@@ -7,9 +7,7 @@ Add Product
 display: flex;
 align-items: center;
 justify-content: center;
-
-}
-
+}  
 .addproduct-box{
     width: 50%;
 }

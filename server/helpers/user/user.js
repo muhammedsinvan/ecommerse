@@ -357,53 +357,85 @@ const getuseraddres = async (req, res) => {
 };
 
 
+// const stripepayment =async(req,res)=>{
+//   let {amount, id,userid,address,cartdata} = req.body;
+//   console.log(id)
+//   const newamount = amount+40
+//   console.log("one")
+//   try {
+//     const payment = await stripe.paymentIntents.create({
+//       payment_method:id,
+//       description:"Product purchased successful",
+//       amount: 1*100, // USD*100
+//       currency: 'inr',
+//       confirm: true,
+//       payment_method_types: ['card'],
+//     })
+//     console.log("Payment", payment)
+ 
+// console.log(payment.status)
+//     if(payment){
+//       const neworder = new order({
+//         userid,
+//         paymentid:id,
+//         paymenttype:'card',
+//         paymentstatus:'Success',
+//         orderstatus:'Confirmed',
+//         grandtotal:newamount,
+//         date:{confirmed:new Date()},
+//         products:cartdata,
+//         address:address
+//       })
+
+//       const addorder = await neworder.save()
+//       if(addorder){
+//         const deletecart = await cart.findOneAndRemove({userid:userid})
+//       }
+//     }
+//     res.json({ 
+//         message: "Payment was successful",
+//         success: true
+//     })
+// } catch (error) {
+//     console.log("Error", error)   
+//     res.json({
+//         message: "Payment Failed",
+//         success: false
+//     })
+// }
+
+// }
+
 const stripepayment =async(req,res)=>{
-  let {amount, id,userid,address,cartdata} = req.body;
-  console.log(cartdata._id)
-  const newamount = amount+40
-  console.log("one")
-  try {
-    const payment = await stripe.paymentIntents.create({
-      payment_method:id,
-      description:"Product purchased successful",
-      amount: newamount, // USD*100
-      currency: 'inr',
-      confirm: true,
-      payment_method_types: ['card'],
-    })
-
-    console.log("Payment", payment)
-    if(payment){
-      const neworder = new order({
-        userid,
-        paymentid:id,
-        paymenttype:'card',
-        paymentstatus:'Success',
-        orderstatus:'Confirmed',
-        grandtotal:newamount,
-        date:{confirmed:new Date()},
-        products:cartdata,
-        address:address
-      })
-
-      const addorder = await neworder.save()
-      if(addorder){
-        const deletecart = await cart.findOneAndRemove({userid:userid})
-      }
-    }
-    res.json({ 
-        message: "Payment was successful",
-        success: true
-    })
-} catch (error) {
-    console.log("Error", error)   
-    res.json({
-        message: "Payment Failed",
-        success: false
-    })
+  console.log(req.body)
+  // const {grandtotal} = req.body;
+  // //  const newamount = grandtotal+40;
+  // try{
+  //   const paymentIntent = await stripe.paymentIntents.create({
+  //     amount:40*100,
+  //     currency:"inr",
+  //     automatic_payment_methods:{
+  //       enabled:true
+  //     }
+  //   })
+  //   res.json({clientsecret : paymentIntent.client_secret})
+  // }catch(error){
+  //   console.log(error)
+  //   res.json(error)
+  // }
 }
 
+const confirmorder = async(req,res)=>{
+  try{
+    console.log("confirm 1")
+    console.log(req.body)
+    console.log("confirm 2")
+  }catch(error){
+    console.log(error)
+  }
 }
+
+
 
 
 const checktoken =(req,res)=>{
@@ -493,6 +525,7 @@ const newpassword = async(req,res)=>{
   }
 }
 
+
 export {
   signupdata, 
   signindata,
@@ -513,6 +546,7 @@ export {
   getuseraddres,
   editshippingaddress,
   stripepayment,
+  confirmorder,
   checktoken,
   getorders,
   orderdetail,
