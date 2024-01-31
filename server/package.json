@@ -5,10 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "10.16.0"
+},
   "dependencies": {
     "cloudinary": "^1.35.0",
     "cors": "^2.8.5",
