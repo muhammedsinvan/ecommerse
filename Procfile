@@ -1,1 +1,1 @@
-web: bin/multi-procfile
+web: node server/index.js
