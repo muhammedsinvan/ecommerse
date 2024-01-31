@@ -1,6 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.19.1"
+},
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -10,9 +13,6 @@
   },
   "author": "",
   "license": "ISC",
-  "engines": {
-    "node": "10.16.0"
-},
   "dependencies": {
     "cloudinary": "^1.35.0",
     "cors": "^2.8.5",
