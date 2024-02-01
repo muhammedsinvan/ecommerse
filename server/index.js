@@ -18,11 +18,11 @@ app.use(cors())
 
 // Serve static files from the React app
 const currentPath = new URL('.', import.meta.url).pathname;
-app.use(express.static(path.join(currentPath, '../client/build')));
+app.use(express.static(path.join(currentPath, '../cliend/build')));
 
 // Handle React routing, return all requests to React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../cliend/build', 'index.html'));
 });
 
 
