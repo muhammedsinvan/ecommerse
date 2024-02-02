@@ -15,7 +15,7 @@ app.use(express.json({limit:'25mb'}));
 app.use(express.urlencoded({limit:'25mb',extended:true}))
 app.use(cors())
 
-
+if (process.env.NODE_ENV === 'production'){
 // Serve static files from the React app
 const currentPath = new URL('.', import.meta.url).pathname;
 app.use(express.static(path.join(currentPath, '../cliend/build')));
@@ -24,7 +24,7 @@ app.use(express.static(path.join(currentPath, '../cliend/build')));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../cliend/build', 'index.html'));
 });
-
+}
 
 app.use('/api/',userrouter);
 app.use('/api/admin',adminrouter)
