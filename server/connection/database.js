@@ -6,7 +6,7 @@ dotenv.config();
 
 export const connectDB = async () =>{
     try{
-        const conn = await mongoose.connect(process.env.DATABASE_URL,{
+        const conn = await mongoose.connect('mongodb+srv://sinvan:sinvan123@cluster0.l6dexcr.mongodb.net/?retryWrites=true&w=majority',{
             useUnifiedTopology:true,
             useNewUrlParser:true,
         })
