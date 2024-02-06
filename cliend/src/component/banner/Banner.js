@@ -23,7 +23,7 @@ const Banner = () => {
   console.log(datas)
   return (
   <Carousel className='banner-container'>
-        {datas?.map((val)=>(  
+        {datas && datas.map((val)=>(  
   <Carousel.Item interval={5000}>
     <div className="banner-image"  onClick={()=>navigate(`${val?.url}`)}>
     <img 
