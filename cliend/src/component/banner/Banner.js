@@ -25,9 +25,9 @@ const Banner = () => {
   <Carousel className='banner-container'>
         {datas?.map((val)=>(  
   <Carousel.Item interval={5000}>
-    <div className="banner-image"  onClick={()=>navigate(`${val.url}`)}>
+    <div className="banner-image"  onClick={()=>navigate(`${val?.url}`)}>
     <img 
-      src={val.image} 
+      src={val?.image} 
       alt="First slide"
     />
     </div>
