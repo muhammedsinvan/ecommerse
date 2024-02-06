@@ -15,9 +15,6 @@ app.use(express.urlencoded({limit:'25mb',extended:true}))
 
 app.use(cors());
 
-app.use(cors({
-  origin: 'https://ecommerse-phi.vercel.app'
-}));
 
 
 app.use('/api/',userrouter);
