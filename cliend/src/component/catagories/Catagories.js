@@ -20,8 +20,8 @@ const Catagories = () => {
 
   return (
     <div className='Categories-Container'>
-        {data.map((item)=>(
-        <Catagoriesitem item={item} key={item.id}/>
+        {data?.map((item)=>(
+        <Catagoriesitem item={item} key={item?.id}/>
       ))}
     </div>
   )
