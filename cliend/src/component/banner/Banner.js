@@ -12,7 +12,7 @@ const Banner = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        let res = await axios.get('https://ecommerse-backend-six.vercel.app/api/getbanner')
+        let res = await axios.get('/api/getbanner')
         setData(res.data)
       }catch(error){
         console.log(error)
