@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './navbar.css'
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../../axios';
 const { useState } = React
 
 const Navbar = () => {

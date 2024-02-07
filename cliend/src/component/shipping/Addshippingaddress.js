@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './addshippingaddress.css'
 import Addressform from './addressform/Addressform'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import axios from '../../axios';
 
 const Addshippingaddress = () => {
 

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './productmng.css'
 import { useParams,useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import axios from '../../../axios';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 

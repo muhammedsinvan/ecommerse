@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './catagories.css'
 import Catagoriesitem from './Catagoriesitem'
-import axios from 'axios'
+import axios from '../../axios';
 
 const Catagories = () => {
   

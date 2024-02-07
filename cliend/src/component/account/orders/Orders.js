@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './orders.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../../axios';
 import EmptyCart from '../../cart/EmptyCart'; 
 import moment from 'moment';
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../shipping.css";
 import * as Yup from "yup";
-import axios from "axios";
+import axios from "../../../axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useFormik } from "formik";
 

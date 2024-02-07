@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './profile.css'
 // import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../../axios';
 
 const Profile = () => {
 

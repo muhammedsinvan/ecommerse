@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import axios from '../../axios';
 
 const Login = () => {
 

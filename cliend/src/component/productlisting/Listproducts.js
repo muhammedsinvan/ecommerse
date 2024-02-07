@@ -1,8 +1,7 @@
 import React, { useEffect, useState,useRef } from 'react'
 import './Productlisting.css';
 import { useNavigate } from 'react-router-dom';
-
-import axios from 'axios';
+import axios from '../../axios';
 import { useParams } from 'react-router-dom';
 
 const Listproducts = () => {

@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Productlisting.css'
 import Listproducts from './Listproducts'
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
-
+import axios from '../../axios';
 
 const Productlisting = () => {
 

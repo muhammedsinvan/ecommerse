@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./CheckoutDetail.css";
 import { useNavigate,useParams } from "react-router-dom";
-import axios from "axios";
+import axios from '../../axios';
 
 const CheckoutDetail = () => {
   const [address, setAddress] = useState([]);

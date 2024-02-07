@@ -92,7 +92,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from './CheckoutForm';
 import CheckoutProduct from './CheckoutProduct';
 import './Checkout.css'
-import axios from 'axios';
+import axios from '../../axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const stripePromise = loadStripe('pk_test_51O4M5ESIxqZqgWEMGqOKg6tMRUCJQLctMzCofQV7s3KR0NzTnKD10u9wVSKqU3GkdhYD9kYKgUKfy4F4XWFsgRod00MdzWZj5n');

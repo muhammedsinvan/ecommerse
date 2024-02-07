@@ -1,8 +1,8 @@
 import './banner.css'
 import {Carousel} from "react-bootstrap"
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import axios from '../../axios';
 const Banner = () => {
 
   const navigate = useNavigate();
