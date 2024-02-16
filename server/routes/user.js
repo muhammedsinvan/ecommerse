@@ -19,7 +19,6 @@ import {
   updateprofile,
   getuseraddres,
   editshippingaddress,
-  stripepayment,
   confirmorder,
   checktoken,
   getorders,
@@ -69,8 +68,6 @@ router.get("/userdata/:userid", protect, userdata);
 router.post("/updateprofile/:userid", updateprofile);
 
 router.get("/getuseraddres/:userid/:addressid", protect, getuseraddres);
-
-router.post("/stripe/payment", stripepayment);
 
 router.post("/paymentsuccess/confirmorder",confirmorder);
 

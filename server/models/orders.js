@@ -2,9 +2,6 @@ import mongoose from 'mongoose';
 
 const orderSchema = mongoose.Schema({
     userid:({type:String,require:true}),
-    paymentid:({type:String,require:true}),
-    paymenttype:({type:String,require:true}),
-    paymentstatus:({type:String,require:true}),
     orderstatus:({type:String,require:true}),
     grandtotal:({type:Number,require:true}),
     date:{
@@ -21,16 +18,7 @@ const orderSchema = mongoose.Schema({
         price:({type:Number,required:true}),
         subtotal:{type:Number}
     }],
-    address:{
-        name:{type:String,required:true},
-        mobile:{type:Number,required:true},
-        pin:{type:Number,required:true},
-        locality:{type:String,required:true},
-        buildingname:{type:String,required:true},
-        landmark:{type:String,required:true},
-        district:{type:String,required:true},
-        state:{type:String,required:true}
-    }
+    addressid:{type:String,require:true},  
 });
 
 const order = mongoose.model('Order',orderSchema);

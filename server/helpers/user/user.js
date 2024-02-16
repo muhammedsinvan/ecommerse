@@ -3,12 +3,9 @@ import CryptoJS from "crypto-js";
 import jwt from "jsonwebtoken";
 import product from "../../models/addproduct.js";
 import cart from "../../models/cart.js";
-import Stripe from "stripe";
 import order from '../../models/orders.js'
 import catagory from "../../models/addcatagory.js";
 import nodemailer from "nodemailer";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET);
 
 const signupdata = async (req, res) => {
   const { username, email, password } = req.body;
@@ -335,7 +332,7 @@ const updateprofile = async (req, res) => {
     let updatedprofile = await user.findByIdAndUpdate(
       { _id: userid },
       { data } 
-    );
+    ); 
     console.log(updatedprofile);
   } catch (error) {
     res.status(500).json(error);
@@ -406,24 +403,6 @@ const getuseraddres = async (req, res) => {
 
 // }
 
-const stripepayment =async(req,res)=>{
-  console.log(req.body)
-  // const {grandtotal} = req.body;
-  // //  const newamount = grandtotal+40;
-  // try{
-  //   const paymentIntent = await stripe.paymentIntents.create({
-  //     amount:40*100,
-  //     currency:"inr",
-  //     automatic_payment_methods:{
-  //       enabled:true
-  //     }
-  //   })
-  //   res.json({clientsecret : paymentIntent.client_secret})
-  // }catch(error){
-  //   console.log(error)
-  //   res.json(error)
-  // }
-}
 
 const confirmorder = async(req,res)=>{
   try{
@@ -545,7 +524,6 @@ export {
   updateprofile,
   getuseraddres,
   editshippingaddress,
-  stripepayment,
   confirmorder,
   checktoken,
   getorders,

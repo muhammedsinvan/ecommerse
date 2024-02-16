@@ -4,6 +4,7 @@ dotenv.config();
 import { connectDB } from './connection/database.js';
 import userrouter from './routes/user.js';
 import adminrouter from './routes/admin.js';
+import striperouter from './routes/stripe.js';
 import cors from 'cors';
 
 connectDB();
@@ -18,7 +19,8 @@ app.use(cors());
 
 
 app.use('/api/',userrouter);
-app.use('/api/admin',adminrouter)
+app.use('/api/admin',adminrouter);
+app.use('/api/stripe',striperouter);
 
 
 app.listen(8000, ()=>{

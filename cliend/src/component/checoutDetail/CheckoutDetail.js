@@ -71,6 +71,18 @@ const CheckoutDetail = () => {
     scrollToBottom()
   }, [error]);
 
+  const orderHandler = async () =>{
+    try{
+      const res = await axios.post(`/api/stripe/payment/${userid}/${address._id}`)
+      console.log(res)
+      if(res.data.session.url){
+        window.location.href = res.data.session.url
+      }
+    }catch(error){
+      console.log(error)
+    }
+  }
+
   return (
     <div className="checkoutDetail-container">
 
@@ -149,13 +161,13 @@ const CheckoutDetail = () => {
         </div>
         <div
           className="checkoutDetail-box-total-detail-btn"
-          onClick={showComponent}
+          onClick={orderHandler}
         >
           <button>PROCEED TO PAYMENT</button>
         </div>
       </div>
     </div>
-  );
+  ); 
 };
 
 export default CheckoutDetail;
