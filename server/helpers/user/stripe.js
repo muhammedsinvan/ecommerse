@@ -20,7 +20,6 @@ const getCheckoutSession =async(req,res)=>{
           product_data: {
             name: item.itemname, // Assuming each item has a name property
             description: 'jdsfjsjfk', // Assuming each item has a description property
-            images:item.image
           },
         },
         quantity: item.qty, // Assuming each item has a quantity of 1
