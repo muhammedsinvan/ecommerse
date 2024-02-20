@@ -26,12 +26,14 @@ const Orderdetail = () => {
     try{
       let res = await axios.get(`/api/order/detail/${params.id}`,config)
       setData(res.data)
-      setProducts(res.data.products)
+      setProducts(res.data.order.products)
     }catch(error){
       console.log(error)
     }
     })()
   },[])
+
+  console.log(data?.order.grandtotal)
 
   return (
     <div className='orderdetails-container'>
@@ -55,30 +57,30 @@ const Orderdetail = () => {
 
             <div className='orderdetails-total-price'>
               <text  className='orderdetails-total-price_title'>Total amount</text>
-              <text>₹{data?.grandtotal}</text>
+              <text>₹{data?.order.grandtotal}</text>
             </div>
             <div className='orderdetails-product_update'>
-<text className='orderdetails-product_status'>{data?.orderstatus}</text>
+<text className='orderdetails-product_status'>{data?.order.orderstatus}</text>
 {/* <text className='orderdetails-product_date'>July 26, 2011</text> */}
-{data?.orderstatus  == 'Confirmed'? <text className='orderdetails-product_date'>{moment(data?.date.confirmed).format('LL')}</text>
-:data?.orderstatus  == 'Shipped'? <text className='orderdetails-product_date'>{moment(data?.date.shipped).format('LL')}</text>
-:data?.orderstatus  == 'Out For Delivery'? <text className='orderdetails-product_date'>{moment(data?.date.outdelivery).format('LL')}</text>
-: <text className='orderdetails-product_date'>{moment(data?.date.deliverd).format('LL')}</text>}
+{data?.order.orderstatus  == 'Confirmed'? <text className='orderdetails-product_date'>{moment(data?.order.date.confirmed).format('LL')}</text>
+:data?.order.orderstatus  == 'Shipped'? <text className='orderdetails-product_date'>{moment(data?.order.date.shipped).format('LL')}</text>
+:data?.order.orderstatus  == 'Out For Delivery'? <text className='orderdetails-product_date'>{moment(data?.order.date.outdelivery).format('LL')}</text>
+: <text className='orderdetails-product_date'>{moment(data?.order.date.deliverd).format('LL')}</text>}
 </div>
 
 
 <div className='orderdetails-product-mobileview'>
 <div className='orderdetails-product_update-mobileview'>
-<text className='orderdetails-product_status'>{data?.orderstatus}</text>
+<text className='orderdetails-product_status'>{data?.order.orderstatus}</text>
 {/* <text className='orderdetails-product_date'>July 26, 2011</text> */}
-{data?.orderstatus  == 'Confirmed'? <text className='orderdetails-product_date'>{moment(data?.date.confirmed).format('LL')}</text>
-:data?.orderstatus  == 'Shipped'? <text className='orderdetails-product_date'>{moment(data?.date.shipped).format('LL')}</text>
-:data?.orderstatus  == 'Out For Delivery'? <text className='orderdetails-product_date'>{moment(data?.date.outdelivery).format('LL')}</text>
-: <text className='orderdetails-product_date'>{moment(data?.date.deliverd).format('LL')}</text>}
+{data?.order.orderstatus  == 'Confirmed'? <text className='orderdetails-product_date'>{moment(data?.order.date.confirmed).format('LL')}</text>
+:data?.order.orderstatus  == 'Shipped'? <text className='orderdetails-product_date'>{moment(data?.order.date.shipped).format('LL')}</text>
+:data?.order.orderstatus  == 'Out For Delivery'? <text className='orderdetails-product_date'>{moment(data?.order.date.outdelivery).format('LL')}</text>
+: <text className='orderdetails-product_date'>{moment(data?.order.date.deliverd).format('LL')}</text>}
 </div>
 <div className='orderdetails-total-price-mobileview'>
               <text  className='orderdetails-total-price_title'>Total amount</text>
-              <text>₹{data?.grandtotal}</text>
+              <text>₹{data?.order.grandtotal}</text>
             </div>
 </div>
 

@@ -20,6 +20,7 @@ const getCheckoutSession =async(req,res)=>{
           product_data: {
             name: item.itemname, // Assuming each item has a name property
             description: 'jdsfjsjfk', // Assuming each item has a description property
+            images:[item.image]
           },
         },
         quantity: item.qty, // Assuming each item has a quantity of 1
@@ -54,42 +55,35 @@ const getCheckoutSession =async(req,res)=>{
   }
 
 
-const stripeWebhook = (req,res)=>{
-    const stripe = new Stripe(process.env.STRIPE_SECRET);
-    const sig = req.headers['stripe-signature'];
-    console.log("enterd")
-  
-    let event;
-    try {
-      // Verify the webhook signature
-      event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
-    } catch (err) {
-      console.error('Webhook signature verification failed.', err.message);
-      return res.sendStatus(400);
-    }
-  
-    // Handle specific event types
-    if (event.type === 'checkout.session.completed') {
-      const session = event.data.object;
-  
-      // Extract relevant data from the session object
-      const { client_reference_id: userid, metadata: { addressId } } = session;
-  
-      // Add order data to MongoDB database
-      try {
-        // Your MongoDB save logic here
-        // Example:
-        // const order = new Order({...});
-        // await order.save();
-        
-        console.log('Order data saved to MongoDB:', { userid, addressId });
-      } catch (error) {
-        console.error('Error saving order data to MongoDB:', error);
-      }
-    }
-  
-    // Respond with a 200 status to acknowledge receipt of the event
-    res.sendStatus(200);
+const stripeWebhook = (request,response)=>{
+  const stripe = new Stripe(process.env.STRIPE_SECRET);
+  const sig = request.headers['stripe-signature'];
+
+  let event;
+
+  try {
+    event = stripe.webhooks.constructEvent(request.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    console.log('verified webook')
+  } catch (err) {
+    console.log(`Webhook Error: ${err.message}`)
+    response.status(400).send(`Webhook Error: ${err.message}`);
+    return;
+  }
+
+  // Handle the event
+  // switch (event.type) {
+  //   case 'payment_intent.succeeded':
+  //     const paymentIntentSucceeded = event.data.object;
+  //     console.log(paymentIntentSucceeded)
+  //     // Then define and call a function to handle the event payment_intent.succeeded
+  //     break;
+  //   // ... handle other event types
+  //   default:
+  //     console.log(`Unhandled event type ${event.type}`);
+  // }
+
+  // Return a 200 response to acknowledge receipt of the event
+  response.send().end();
 }
 
 export {getCheckoutSession,stripeWebhook};

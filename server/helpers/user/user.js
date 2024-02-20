@@ -354,56 +354,6 @@ const getuseraddres = async (req, res) => {
 };
 
 
-// const stripepayment =async(req,res)=>{
-//   let {amount, id,userid,address,cartdata} = req.body;
-//   console.log(id)
-//   const newamount = amount+40
-//   console.log("one")
-//   try {
-//     const payment = await stripe.paymentIntents.create({
-//       payment_method:id,
-//       description:"Product purchased successful",
-//       amount: 1*100, // USD*100
-//       currency: 'inr',
-//       confirm: true,
-//       payment_method_types: ['card'],
-//     })
-//     console.log("Payment", payment)
- 
-// console.log(payment.status)
-//     if(payment){
-//       const neworder = new order({
-//         userid,
-//         paymentid:id,
-//         paymenttype:'card',
-//         paymentstatus:'Success',
-//         orderstatus:'Confirmed',
-//         grandtotal:newamount,
-//         date:{confirmed:new Date()},
-//         products:cartdata,
-//         address:address
-//       })
-
-//       const addorder = await neworder.save()
-//       if(addorder){
-//         const deletecart = await cart.findOneAndRemove({userid:userid})
-//       }
-//     }
-//     res.json({ 
-//         message: "Payment was successful",
-//         success: true
-//     })
-// } catch (error) {
-//     console.log("Error", error)   
-//     res.json({
-//         message: "Payment Failed",
-//         success: false
-//     })
-// }
-
-// }
-
-
 const confirmorder = async(req,res)=>{
   try{
     console.log("confirm 1")
@@ -429,7 +379,6 @@ const getorders =async(req,res)=>{
   const userid = req.params.userid;
   try{
     let orders = await order.find({userid}).sort({ _id: -1 })
-    console.log(orders)
     res.json(orders)
   }catch(error){
     res.status(500).json(error);
@@ -439,8 +388,33 @@ const getorders =async(req,res)=>{
 const orderdetail = async (req,res)=>{
   const orderid = req.params.orderid;
   try{
-    let orderonedetail = await order.findById({_id:orderid})
-    res.json(orderonedetail)
+    // let orderonedetail = await order.findById({_id:orderid})
+    // res.json(orderonedetail)
+    const orderData = await order.findById(orderid);
+    if (!orderData) {
+      return res.status(404).json({ message: "Order not found" });
+    }
+
+    // Since you have the addressid in the order schema, you can find the associated user by this addressid
+    const userData = await user.findOne({ "address._id": orderData.addressid });
+    if (!userData) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Find the address within the user's addresses array based on the addressid
+    const address = userData.address.find(addr => addr._id == orderData.addressid);
+    if (!address) {
+      return res.status(404).json({ message: "Address not found" });
+    }
+
+    // If everything is found successfully, return the order details along with the full address
+    const orderWithAddress = {
+      order: orderData,
+      address: address
+    };
+    res.json(orderWithAddress); 
+
+
   }catch(error){
     res.status(500).json(error);
   }
