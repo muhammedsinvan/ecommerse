@@ -388,26 +388,23 @@ const getorders =async(req,res)=>{
 const orderdetail = async (req,res)=>{
   const orderid = req.params.orderid;
   try{
-    // let orderonedetail = await order.findById({_id:orderid})
-    // res.json(orderonedetail)
     const orderData = await order.findById(orderid);
     if (!orderData) {
       return res.status(404).json({ message: "Order not found" });
     }
 
-    // Since you have the addressid in the order schema, you can find the associated user by this addressid
+   
     const userData = await user.findOne({ "address._id": orderData.addressid });
     if (!userData) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    // Find the address within the user's addresses array based on the addressid
+   
     const address = userData.address.find(addr => addr._id == orderData.addressid);
     if (!address) {
       return res.status(404).json({ message: "Address not found" });
     }
 
-    // If everything is found successfully, return the order details along with the full address
     const orderWithAddress = {
       order: orderData,
       address: address
@@ -439,7 +436,7 @@ if(response){
     from: "verdeelifeshop@gmail.com",
     to: response.email,
     subject: "Reset your password",
-    text: `https://verdeelife.store/forgotpassword/newpassword/${response._id}/${token}`,
+    text: `${process.env.CLIENT_SITE_URL}/forgotpassword/newpassword/${response._id}/${token}`,
   };
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
