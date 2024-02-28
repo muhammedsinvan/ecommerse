@@ -6,6 +6,8 @@ import cart from "../../models/cart.js";
 import order from '../../models/orders.js'
 import catagory from "../../models/addcatagory.js";
 import nodemailer from "nodemailer";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const signupdata = async (req, res) => {
   const { username, email, password } = req.body;

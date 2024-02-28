@@ -71,14 +71,16 @@ const CheckoutDetail = () => {
     scrollToBottom()
   }, [error]);
 
-  const orderHandler = async () =>{
+  const orderHandler = async () =>{ 
     try{
       const res = await axios.post(`/api/stripe/payment/${userid}/${address._id}`)
+      console.log("res")
       console.log(res)
       if(res.data.session.url){
         window.location.href = res.data.session.url
       }
     }catch(error){
+      console.log("error")
       console.log(error)
     }
   }

@@ -8,7 +8,7 @@ const getCheckoutSession =async(req,res)=>{
       const stripe = new Stripe(process.env.STRIPE_SECRET);
       const userid = req.params.userid; 
       const addressId = req.params.addressid;
-  
+      
       const getCart = await cart.findOne({userid})
       const Getuser = await user.findById(userid)
   
@@ -55,7 +55,7 @@ const getCheckoutSession =async(req,res)=>{
   }
 
 
-const stripeWebhook = (request,response)=>{
+const stripeWebhook = (request,response)=>{ 
   const stripe = new Stripe(process.env.STRIPE_SECRET);
   const sig = request.headers['stripe-signature'];
 

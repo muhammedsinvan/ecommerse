@@ -22,7 +22,7 @@ app.use(cors());
 
 app.use('/api/',userrouter);
 app.use('/api/admin',adminrouter);
-app.use('/api/stripe',striperouter,bodyParser.raw({ type: 'application/json' }));
+app.use('/api/stripe',striperouter);
 
 
 app.listen(8000, ()=>{
