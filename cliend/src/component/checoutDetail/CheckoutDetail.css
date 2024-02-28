@@ -62,7 +62,7 @@
     color: white;
     padding: 0.3rem 1rem ;
     font-weight: 700;
-    border-radius: 0.5rem;
+    border-radius: 5px;
 }
 
 .checkoutDetail-address-selectbtn{
@@ -78,7 +78,7 @@
     padding: 0.3rem 1rem ;
     font-weight: 700;
     font-family: fantasy;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .checkoutDetail-address-oneaddress-error button{
@@ -231,7 +231,7 @@
     font-size: 17px;
     padding: 0.5rem 4rem;
     font-family: fantasy;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 
