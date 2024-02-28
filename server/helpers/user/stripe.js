@@ -5,10 +5,14 @@ import Order from "../../models/orders.js";
 
 const getCheckoutSession =async(req,res)=>{
     try{
+      console.log("ldsfjfsdjf")
       const stripe = new Stripe(process.env.STRIPE_SECRET);
       const userid = req.params.userid; 
       const addressId = req.params.addressid;
-      
+
+      console.log(stripe)
+      console.log(userid)
+      console.log(addressId)
       const getCart = await cart.findOne({userid})
       const Getuser = await user.findById(userid)
   
