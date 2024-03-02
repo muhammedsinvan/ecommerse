@@ -5,7 +5,7 @@ import Order from "../../models/orders.js";
 
 const getCheckoutSession =async(req,res)=>{
     try{
-      const stripe = new Stripe("sk_test_51O4M5ESIxqZqgWEMLeoytVQBCfNmVVT3SNBxQIg29kqnZALabMAmoBDMgE8SW7OTzZpfOWhVviTx4aTyLp5vlRel00azX3EVJG");
+      const stripe = new Stripe(process.env.STRIPE_SECRET);
       const userid = req.params.userid; 
       const addressId = req.params.addressid;
 
